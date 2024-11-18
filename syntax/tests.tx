@@ -1,0 +1,92 @@
+
+MMSE: 
+    'MMSE'
+    (
+        ('date:' date=STRING)?
+        ('score:' score=INT)
+        ('visuospatial_score:' v_score=INT)?
+    )#
+    'end'
+;
+
+RAVLT: 
+    'RAVLT'
+    (
+        ('date:' date=STRING)?
+        ('learning_score:' l_score=INT)
+        ('maintaining_score:' m_score=INT)
+        ('wm_score:' wm_score=INT)?
+    )#
+    'end'
+;
+
+ROCFT: 
+    'ROCFT'
+    (
+        ('date:' date=STRING)?
+        ('copy_score:' c_score=INT)
+        ('delayed_recall_score:' d_score=INT)
+    )#
+    'end'
+;
+
+FUCAS: 
+    'FUCAS'
+    (
+        ('date:' date=STRING)?
+        ('score:' score=INT)
+        ('understanding:' understanding=INT)?
+        ('prospective_memory:' prospective_memory=INT)?
+        ('planning:' planning=INT)?
+        ('time:' time=INT)?
+        ('sequence:' sequence=INT)?
+        ('accuracy:' accuracy=INT)?
+        ('goal:' goal=INT)?
+    )#
+    'end'
+;
+
+FRSSD: 
+    'FRSSD'
+    (
+        ('date:' date=STRING)?
+        ('score:' score=INT)
+    )#
+    'end'
+;
+
+NPI: 
+    'NPI'
+    (
+        ('date:' date=STRING)?
+        ('score:' score=INT)
+    )#
+    'end'
+;
+
+GDS: 
+    'GDS'
+    (
+        ('date:' date=STRING)?
+        ('score:' score=INT)
+    )#
+    'end'
+;
+
+SAST: 
+    'SAST'
+    (
+        ('date:' date=STRING)?
+        ('score:' score=INT)
+    )#
+    'end'
+;
+
+BDI: 
+    'BDI'
+    (
+        ('date:' date=STRING)?
+        ('score:' score=INT)
+    )#
+    'end'
+;

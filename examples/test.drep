@@ -1,0 +1,68 @@
+ReportInfo
+    date: "12/11/2024"
+end
+
+PatientInfo
+    first_name: "Name"
+    last_name: "Surname"
+    gender: "F"
+    age: 78
+    education: 13
+    enesthesia: true
+    date_medical_history: "6/12/2012"
+    date_npse: "5/12/2012"
+    unit: "saint helen"
+    training_suggestion: true
+
+    attendant_1_existed: true
+    attendant_1_name: "Attendant1"
+    attendant_1_relationship: "child"
+    attendant_1_gender: "M"
+    
+    attendant_2_existed: true
+    attendant_2_name: "Attendant2"
+    attendant_2_relationship: "husband"
+    attendant_2_gender: "F"
+    
+    revisit: true
+    revisit_date: "12/09/2016"
+end
+
+RAVLT
+    learning_score: 10
+    maintaining_score: 9
+    wm_score: 8
+end
+
+ROCFT
+    copy_score: 31
+    delayed_recall_score: 18
+end
+
+MMSE
+    score: 19
+    visuospatial_score: 8
+end
+
+FUCAS
+    score: 44 // total_score
+    understanding: 1
+    prospective_memory: 2
+    planning: 1
+    time: 1
+    sequence: 1
+    accuracy: 1
+    goal: 2
+end
+
+FRSSD
+    score: 16
+end
+
+NPI
+    score: 47
+end
+
+GDS
+    score: 2
+end

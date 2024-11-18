@@ -1,0 +1,30 @@
+PatientInfo: 
+    'PatientInfo'
+    (
+        ('first_name:' name=STRING)
+        ('last_name:' surname=STRING)
+        ('father_name:' father_name=STRING)?
+        ('mother_name:' mother_name=STRING)?
+        ('gender:' gender=STRING)
+        ('amka:' amka=STRING)?
+        ('age:' age=INT)
+        ('education:' education=INT)
+        ('enesthesia:' enesthesia=BOOL)
+        ('date_medical_history:' date_med=STRING)?
+        ('date_npse:' date_npse=STRING)?
+        ('unit:' unit=STRING)?
+        ('training_suggestion:' training_suggestion=BOOL)?
+
+        ('attendant_1_existed:' att_1_existed=BOOL)
+        ('attendant_2_existed:' att_2_existed=BOOL)
+        ('attendant_1_gender:' att_1_gender=STRING)?
+        ('attendant_1_relationship:' att_1_rel=STRING)?
+        ('attendant_1_name:' att_1_name=STRING)?
+        ('attendant_2_gender:' att_2_gender=STRING)?
+        ('attendant_2_relationship:' att_2_rel=STRING)?
+        ('attendant_2_name:' att_2_name=STRING)?
+        ('revisit:' revisit=BOOL)?
+        ('revisit_date:' revisit_date=STRING)?
+    )#
+    'end'
+;

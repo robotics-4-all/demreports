@@ -1,0 +1,6 @@
+ReportInfo: 
+    'ReportInfo'
+    (
+        ('date:' date=STRING)
+    )#
+    'end';

@@ -1,0 +1,21 @@
+import utilities
+import reportinfo
+import patientinfo
+import tests
+
+Model:
+    imports*=Import
+    (
+        (report=ReportInfo)?
+        (patient=PatientInfo)?
+        (mmse=MMSE)?
+        (ravlt=RAVLT)?
+        (rocft=ROCFT)?
+        (fucas=FUCAS)?
+        (frssd=FRSSD)?
+        (npi=NPI)?
+        (gds=GDS)?
+        (sast=SAST)?
+        (bdi=BDI)?
+    )#
+;

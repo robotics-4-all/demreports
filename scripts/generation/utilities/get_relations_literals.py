@@ -28,3 +28,16 @@ def get_relations_literals():
         "M": "σύζυγος"
     }
     return ret
+
+# transform 2024-11-18 to 18/11/2024
+def transform_date(date):
+    """
+    Transforms a date from the format "YYYY-MM-DD" to "DD/MM/YYYY".
+
+    Args:
+        date (str): A string representing a date in the format "YYYY-MM-DD".
+
+    Returns:
+        str: A string representing the date in the format "DD/MM/YYYY".
+    """
+    return date[-2:] + "/" + date[5:7] + "/" + date[:4]

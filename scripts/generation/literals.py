@@ -52,6 +52,10 @@ def generate_literals(parsed):
         trimmed_name_2 = patient.att_2_name[:-1] if patient.att_2_gender == "M" else patient.att_2_name
         ret["att_names"] = f"κ. {trimmed_name_1} και κ. {trimmed_name_2}"
         ret["att_names_with_relations"] = relations[patient.att_1_rel][patient.att_1_gender] + " κ. " + patient.att_1_name + " και " + relations[patient.att_2_rel][patient.att_2_gender] + " κ. " + patient.att_2_name
+    else:
+        ret["att_literal_1"] = "τον ίδιο"
+        ret["att_names"] = ""
+        ret["att_names_with_relations"] = ""
 
     if patient.revisit and patient.revisit_date != "":
         ret["revisit_after"] = date_difference(patient.date_med, patient.revisit_date)

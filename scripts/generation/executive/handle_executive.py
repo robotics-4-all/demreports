@@ -1,4 +1,5 @@
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+from docx.shared import RGBColor
 
 from generation.tests_literals.fucas_literals import fucas_literals
 
@@ -22,6 +23,7 @@ def handle_executive_functions(parsed, document, literals, print_output = False)
 
     printable_1 = f"Όσον αφορά την αξιολόγηση των σύνθετων και των απλών καθημερινών δραστηριοτήτων, η οποία έγινε μέσω της δοκιμασίας FUCAS, {porisma}.\n"
     p1.add_run(printable_1)
+    p1.runs[0].font.color.rgb = RGBColor(255, 0, 0)
 
     # "δεν παρουσίαζε δυσκολίες σε ικανότητες που είναι απαραίτητες προκειμένου να ολοκληρωθεί σωστά η εκτέλεση σύνθετων νοητικών έργων/δραστηριοτήτων" epimerous = 0
     # "παρουσίαζε [σοβαρες] δυσκολίες σε ικανότητες που είναι απαραίτητες προκειμένου να ολοκληρωθεί σωστά η εκτέλεση σύνθετων νοητικών έργων/δραστηριοτήτων" epimerous = 2
@@ -40,6 +42,7 @@ def handle_executive_functions(parsed, document, literals, print_output = False)
     Οι παραπάνω δυσκολίες στην εκτελεστική λειτουργία φαίνεται να επηρέαζαν την καθημερινή ζωή {literals['examinee_gender']}, με αποτέλεσμα, να χρήζει υπενθύμισης (π.χ. με ρολόι ή λεκτική υπενθύμιση μέσω τρίτων), αλλά και βοήθεια προκειμένου να φέρει σε πέρας αποτελεσματικά σύνθετα νοητικά έργα/δραστηριότητες της καθημερινής ζωής. \
     Ωστόσο, μέσα από την αντικειμενική εκτίμηση {literals['the_same']} φάνηκε ότι για το διάστημα που διενεργήθηκε η εκτίμηση {literals['full_with_article']} δεν αντιμετώπιζε ιδιαίτερα προβλήματα στο να εκτελεί πιο απλές καθημερινές δραστηριότητες όπως είναι η ικανότητα ένδυσης και ατομικής υγιεινής (πλύσιμο χεριών)."
     p1.add_run(printable_2)
+    p1.runs[1].font.color.rgb = RGBColor(255, 0, 0)
 
     if print_output:
         print(printable_1)

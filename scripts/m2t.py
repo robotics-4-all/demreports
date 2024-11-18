@@ -1,3 +1,7 @@
+"""
+Implements the logic for the model to text transformation.
+"""
+
 from textx import metamodel_from_file
 from docx import Document
 
@@ -42,16 +46,16 @@ lits = generate_literals(parsed)
 # Call the functions to handle the parsed data
 handle_exam(parsed, document)
 
-add_header(document, "Στοιχεία ασθενή")
-handle_patient_info(parsed, document)
+add_header(document, "Στοιχεία ασθενή") # ok
+handle_patient_info(parsed, document) # ok
 
-add_header(document, "Δοκιμασίες")
-handle_tests_list(parsed, document)
+add_header(document, "Δοκιμασίες") # ok
+handle_tests_list(parsed, document) # ok
 
-add_header(document, "Αποτελέσματα")
-handle_scores(parsed, document)
+add_header(document, "Αποτελέσματα") # ok
+handle_scores(parsed, document) # ok
 
-add_header(document, "Εισαγωγή")
+add_header(document, "Εισαγωγή") # ok
 handle_s1_first_visit(parsed, document, lits) #οk
 handle_s1_revisit(parsed, document, lits) #ok
 handle_s1_last(parsed, document, lits) #ok
@@ -66,7 +70,7 @@ add_header(document, "Οπτικοχωρικές ικανότητες", 2)
 handle_visuospatial(parsed, document, lits)
 
 add_header(document, "Εκτελεστικές λειτουργίες", 2)
-handle_executive_functions(parsed, document, lits, True) #needs input from Elena
+handle_executive_functions(parsed, document, lits) #needs input from Elena
 
 add_header(document, "Καθημερινή λειτουργικότητα", 2)
 handle_everyday_functionality(parsed, document, lits)

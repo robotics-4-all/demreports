@@ -10,14 +10,26 @@ from generation.tests_literals.fucas_literals import fucas_literals
 from generation.tests_literals.frssd_literals import frssd_literals
 
 def handle_everyday_functionality(parsed, document, literals, print_output = False):
+    """
+    Handles the functionality for generating a report based on everyday activities.
+
+    Args:
+        parsed (dict): A dictionary containing parsed data from the input.
+        document (Document): A Document object where the report will be added.
+        literals (dict): A dictionary containing literal strings used in the report.
+        print_output (bool, optional): If True, prints the generated report text. Defaults to False.
+
+    Returns:
+        None
+    """
     p1 = document.add_paragraph()
 
     # obj: 7: no, >=9 [ήπια, σοβαρά] ελλείματα
     # obj_medication: λήψη της φαρμακευτικής αγωγής
     # obj_telephone: επικοινωνίας με την χρήση τηλεφώνου
     # obj_financial: ικανότητα οικονομικών συναλλαγών
-    # obj_hygene: διατήρησης της προσωπικής υγιεινής 
-    # obj_orientation: προσανατολισμού σε χώρο 
+    # obj_hygene: διατήρησης της προσωπικής υγιεινής
+    # obj_orientation: προσανατολισμού σε χώρο
     # obj_dressing: ένδυσης
 
     fucas_lits = fucas_literals(parsed['fucas'])
@@ -47,8 +59,8 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
 
     p1.add_run(printable_2)
 
-    printable_3 = " Τα παραπάνω ευρήματα συνηγορούν στο ότι για το χρονικό διάστημα στο οποίο αναφέρεται η νευροψυχολογική εκτίμηση, {literals['full_with_article']} χρειαζόταν υπενθύμιση, βοήθεια και στήριξη μέσω τρίτων προσώπων προκειμένου να μπορεί να ανταπεξέλθει στις σύνθετες αλλά και στις πιο απλές δραστηριότητες της καθημερινής ζωής."
-    p1.add_run(printable_3)
-    p1.runs[-1].font.color.rgb = RGBColor(255, 0, 0)
+    printable_3 = f" Τα παραπάνω ευρήματα (η ύπαρξη μέτριων ή σοβαρών ελλειμάτων) συνηγορούν στο ότι για το χρονικό διάστημα στο οποίο αναφέρεται η νευροψυχολογική εκτίμηση, {literals['full_with_article']} χρειαζόταν υπενθύμιση, βοήθεια και στήριξη μέσω τρίτων προσώπων προκειμένου να μπορεί να ανταπεξέλθει στις σύνθετες αλλά και στις πιο απλές δραστηριότητες της καθημερινής ζωής."
+    if frssd_lits['finals']['moderate'] != "" or frssd_lits['finals']['severe'] != "":
+        p1.add_run(printable_3)
 
     p1.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY

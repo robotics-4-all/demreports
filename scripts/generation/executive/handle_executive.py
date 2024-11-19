@@ -1,10 +1,27 @@
+"""
+File that contains the function to handle the generation of the executive functions section in a document.
+"""
+
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import RGBColor
 # pylint: disable=C0301
 
 from generation.tests_literals.fucas_literals import fucas_literals
+from generation.utilities.create_literal_list import create_literal_list
 
-def handle_executive_functions(parsed, document, literals, print_output = False):
+def handle_executive_functions(parsed, document, literals):
+    """
+    Handles the generation of the executive functions section in a document.
+
+    Args:
+        parsed (dict): A dictionary containing parsed data, including 'fucas' key.
+        document (Document): A python-docx Document object where the content will be added.
+        literals (dict): A dictionary containing literal strings used in the document.
+        print_output (bool, optional): If True, prints the output. Defaults to False.
+
+    Returns:
+        None
+    """
     p1 = document.add_paragraph()
 
     fl = fucas_literals(parsed['fucas'])
@@ -24,36 +41,17 @@ def handle_executive_functions(parsed, document, literals, print_output = False)
 
     printable_1 = f"Όσον αφορά την αξιολόγηση των σύνθετων και των απλών καθημερινών δραστηριοτήτων, η οποία έγινε μέσω της δοκιμασίας FUCAS, {porisma}.\n"
     p1.add_run(printable_1)
-    p1.runs[0].font.color.rgb = RGBColor(255, 0, 0)
 
-    # "δεν παρουσίαζε δυσκολίες σε ικανότητες που είναι απαραίτητες προκειμένου να ολοκληρωθεί σωστά η εκτέλεση σύνθετων νοητικών έργων/δραστηριοτήτων" epimerous = 0
-    # "παρουσίαζε [σοβαρες] δυσκολίες σε ικανότητες που είναι απαραίτητες προκειμένου να ολοκληρωθεί σωστά η εκτέλεση σύνθετων νοητικών έργων/δραστηριοτήτων" epimerous = 2
+    p1.add_run(f"Τα παραπάνω ευρήματα καταδεικνύουν πως {literals['full_with_article']}")
+    p1.add_run(f"{'δεν' if len(fl['individual_affected']) == 0 else ''} παρουσίαζε δυσκολίες σε ικανότητες που είναι απαραίτητες προκειμένου να ολοκληρωθεί σωστά η εκτέλεση σύνθετων νοητικών έργων/δραστηριοτήτων.")
 
-    #understanding: δυσκολία να κατανοήσει μια πληροφορία/οδηγία όταν είναι σύνθετη και πιθανόν να χρειάζεται να επαναληφθεί
+    if len(fl['individual_affected']) > 0:
+        p1.add_run(" Πιθανά παραδείγματα που να σχετίζονται με την καθημερινή ζωή αφορούν τη δυσκολία του εξεταζόμενου")
+        lst = create_literal_list([f" {fl['examples'][item]}" for item in fl['individual_affected']])
+        p1.add_run(lst)
+    p1.add_run(".")
 
-    #prospective_memory: να θυμηθεί να κάνει κάτι σε συγκεκριμένο χρόνο (π.χ. να πάρει το φάρμακό του την συγκεκριμένη ώρα, να κλείσει τον φούρνο, να πάει σε κάποιο προγραμματισμένο ραντεβού)
-    
-    #planning: να μπορεί να ορίσει τα βήματα προκειμένου να ολοκληρώσει ένα σύνθετο έργο (να μπορεί να σχεδιάσει ένα ταξίδι, ένα γεύμα για πολλά άτομα, να οργανώσει την ημέρα του)
-    
-    #time: παίρνει περισσότερο χρόνο από το συνηθισμένο για να ολοκληρώσει μια δραστηριότητα
-
-    #sequence: δυσκολία να ακολουθήσει την σωστή σειρά βημάτων για να ολοκληρώσει ένα έργο
-
-    #accuracy: δυσκολία να εκτελέσει ορθά (με ακρίβεια) τα βήματα που απαιτούνται για την ολοκλήρωση ενός σύνθετου έργου 
-
-    #accuracy: + προοπτική: Διαπιστώθηκε επίσης ότι όταν το σύνθετο έργο που πρέπει να ολοκληρωθεί έχει απαιτήσεις σε ικανότητες μακρόχρονης μνήμης, εμφανίζονται δυσκολίες σε επίπεδο ακρίβειας βημάτων οι οποίες πρέπει να ακολουθηθούν από τον εξεταζόμενο προκειμένου να διεκπεραιωθεί το έργο 
-
-    #goal: δυσκολία να ολοκληρώσει ένα σύνθετο έργο χωρίς να χρειαστεί βοήθεια
-
-    # Poptsi here
-    printable_2 = f"Τα παραπάνω ευρήματα καταδεικνύουν πως {literals['full_with_article']} για το διάστημα που έλαβε χώρα η εξέταση, παρουσίαζε δυσκολίες σε ικανότητες που είναι απαραίτητες προκειμένου να ολοκληρωθεί σωστά η εκτέλεση σύνθετων νοητικών έργων/δραστηριοτήτων. \
-    Πιθανά παραδείγματα που να σχετίζονται με την καθημερινή ζωή αφορούν τη δυσκολία του εξεταζόμενου να θυμηθεί ότι πρέπει να εκτελέσει κάποιο έργο σε συγκεκριμένο χρονικό διάστημα, όπως πχ να πάρει σωστά και στην ώρα της την φαρμακευτική του αγωγή που λάμβανε, ή να σχεδιάσει ένα ταξίδι, να επιλύσει μια σύνθετη δραστηριότητα που απαιτεί σύνθετη σκέψη. \
-    Οι παραπάνω δυσκολίες στην εκτελεστική λειτουργία φαίνεται να επηρέαζαν την καθημερινή ζωή {literals['examinee_gender']}, με αποτέλεσμα, να χρήζει υπενθύμισης (π.χ. με ρολόι ή λεκτική υπενθύμιση μέσω τρίτων), αλλά και βοήθεια προκειμένου να φέρει σε πέρας αποτελεσματικά σύνθετα νοητικά έργα/δραστηριότητες της καθημερινής ζωής."
-    p1.add_run(printable_2)
-    p1.runs[1].font.color.rgb = RGBColor(255, 0, 0)
-
-    if print_output:
-        print(printable_1)
-        print(printable_2)
+    if "ακρίβειας βημάτων για την διεκπεραίωση έργων" in fl['individual_affected'] and "προοπτικής μνήμης" in fl['individual_affected']:
+        p1.add_run(" Διαπιστώθηκε επίσης ότι όταν το σύνθετο έργο που πρέπει να ολοκληρωθεί έχει απαιτήσεις σε ικανότητες μακρόχρονης μνήμης, εμφανίζονται δυσκολίες σε επίπεδο ακρίβειας βημάτων οι οποίες πρέπει να ακολουθηθούν από τον εξεταζόμενο προκειμένου να διεκπεραιωθεί το έργο.")
 
     p1.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY

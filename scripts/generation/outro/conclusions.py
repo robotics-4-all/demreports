@@ -1,8 +1,24 @@
+"""
+File that contains the function to handle the generation of the conclusions section in a document.
+"""
+
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import RGBColor
 # pylint: disable=C0301
 
 def handle_conclusions(parsed, document, literals, print_output = False):
+    """
+    Handles the generation of the conclusions section in a document.
+
+    Args:
+        parsed (dict): Parsed data to be used in the conclusions.
+        document (Document): The document object where the conclusions will be added.
+        literals (dict): A dictionary containing literal values to be inserted into the text.
+        print_output (bool, optional): If True, prints the output. Defaults to False.
+
+    Returns:
+        None
+    """
     p1 = document.add_paragraph()
 
     # input from Elena

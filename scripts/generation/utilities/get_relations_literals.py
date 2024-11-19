@@ -1,3 +1,7 @@
+"""
+File that contains the function to get relationship literals in Greek.
+"""
+
 # pylint: disable=C0301
 
 def get_relations_literals():

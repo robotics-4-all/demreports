@@ -46,13 +46,13 @@ end
 
 FUCAS
     score: 44 // total_score
-    understanding: 1
+    understanding: 2
     prospective_memory: 2
     planning: 1
     time: 1
     sequence: 1
-    accuracy: 1
-    goal: 2
+    accuracy: 2
+    goal: 1
 
     obj_medication: 9
     obj_telephone: 9

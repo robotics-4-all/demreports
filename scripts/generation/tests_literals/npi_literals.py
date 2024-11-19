@@ -61,6 +61,5 @@ def npi_literals(results):
             severity_items[getattr(results, f"{key}_severity")].append(
                 f"{value} με συχνότητα εμφάνισης {literal_freq}"
             )
-    
-    return severity_items
 
+    return severity_items

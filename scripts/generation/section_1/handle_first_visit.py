@@ -1,9 +1,13 @@
+"""
+File that contains the function to handle the first visit section of the document.
+"""
+
 # pylint: disable=C0301
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
 from generation.utilities.compare_dates import compare_dates
 
-def handle_s1_first_visit(parsed, document, literals, print_output = False):
+def handle_s1_first_visit(parsed, document, literals):
     """
     Handles the generation of the first visit section for a document.
 

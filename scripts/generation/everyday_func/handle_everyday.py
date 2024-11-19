@@ -49,7 +49,7 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
 
     # 0: no, 1: mild, 2: μέτρια, 3: σοβαρά
     # nutrition: διατροφής
-    # dressing: ένδυσης   
+    # dressing: ένδυσης
     # akrateia: αναφέρθηκε εγκράτεια ούρων (3+κοπράνων)
     #== check presentation
 

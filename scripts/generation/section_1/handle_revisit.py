@@ -1,7 +1,11 @@
+"""
+File that contains the function to handle the revisit paragraph of section 1.
+"""
+
 # pylint: disable=C0301
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
-def handle_s1_revisit(parsed, document, literals, print_output = False):
+def handle_s1_revisit(parsed, document, literals):
     """
     Handles the generation of a paragraph in the document for a patient's revisit.
 

@@ -1,3 +1,7 @@
+"""
+File that contains the function to calculate the difference between two dates.
+"""
+
 # pylint: disable=C0301
 from datetime import datetime
 
@@ -16,7 +20,7 @@ def date_difference(date1, date2):
     date_format = "%d/%m/%Y"
     d1 = datetime.strptime(date1, date_format)
     d2 = datetime.strptime(date2, date_format)
-    
+
     # Ensure d1 is the earlier date
     if d1 > d2:
         d1, d2 = d2, d1
@@ -47,5 +51,5 @@ def date_difference(date1, date2):
         difference = f"περίπου {months} μήνες"
     elif days > 0:
         difference = f"{days} ημέρες"
-    
+
     return difference

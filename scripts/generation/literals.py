@@ -1,4 +1,7 @@
 # pylint: disable=C0301
+"""
+File that contains the function to generate a dictionary of literals based on the parsed patient information.
+"""
 
 from generation.utilities.get_relations_literals import get_relations_literals
 from generation.utilities.date_difference import date_difference

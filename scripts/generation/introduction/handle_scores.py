@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 def handle_scores(parsed, document):
     """
     Processes and formats various cognitive and psychological test scores from the parsed data 

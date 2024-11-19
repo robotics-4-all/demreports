@@ -1,3 +1,4 @@
+# pylint: disable=C0301
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
 from generation.utilities.compare_dates import compare_dates

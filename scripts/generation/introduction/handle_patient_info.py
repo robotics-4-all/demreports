@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 def handle_patient_info(parsed, document):
     """
     Processes patient information and adds it to the given document.

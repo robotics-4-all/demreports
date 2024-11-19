@@ -1,6 +1,7 @@
 """
 Function that handles the everyday functionality section of the report
 """
+# pylint: disable=C0301
 
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import RGBColor

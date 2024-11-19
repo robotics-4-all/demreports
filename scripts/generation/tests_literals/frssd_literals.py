@@ -1,7 +1,7 @@
 """
 Function that generates literal descriptions of various attributes based on their severity levels.
 """
-
+# pylint: disable=C0301
 from generation.utilities.create_literal_list import create_literal_list
 
 def frssd_literals(results):

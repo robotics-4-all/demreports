@@ -1,11 +1,13 @@
 """
 File handling the generation of the neuropsychological symptoms report paragraph
 """
-
+# pylint: disable=C0301
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import RGBColor
 
 from generation.tests_literals.gds_literals import gds_literals
+from generation.tests_literals.npi_literals import npi_literals
+from generation.utilities.create_literal_list import create_literal_list
 
 def handle_neuropsychological_symptoms(parsed, document, literals, print_output = False):
     def handle_neuropsychological_symptoms(parsed, document, literals, print_output=False):
@@ -24,8 +26,46 @@ def handle_neuropsychological_symptoms(parsed, document, literals, print_output 
     gds_lits = gds_literals(parsed['gds'])
 
     p1.add_run(f"Σύμφωνα με τα ερωτηματολόγιο αυτοαναφοράς (GDS) που χορηγήθηκε {literals['examinee_gender_v2']}, για την περίοδο που έγινε η εκτίμηση, {gds_lits}.")
+
+    npi_lits = npi_literals(parsed['npi'])
     
-    p1.add_run(f" Σύμφωνα με {literals['att_literal_1']} ({literals['att_names_with_relations']}) αναφέρθηκαν ήπιας σοβαρότητας κατάθλιψη με συχνότητα εμφάνισης μία φορά ή περισσότερες την ημέρα, καθώς και ήπιας σοβαρότητας απάθεια με συχνότητα εμφάνισης αρκετές φορές την εβδομάδα αλλά λιγότερο από µια φορά την ημέρα. Αναφέρθηκαν επίσης μέτριας σοβαρότητας επιθετικότητα, άγχος, έλλειψη αναστολών, ευερεθιστότητα καθώς και παθολογική κινητική συμπεριφορά. Οι παραπάνω συμπεριφορές αναφέρθηκε από τους συνοδούς ότι παρατηρήθηκαν πολύ συχνά, μία ή περισσότερες φορές την ημέρα. Τέλος αναφέρθηκε ήπια απάθεια/αδιαφορία με συχνότητα εμφάνισης αρκετές φορές την εβδομάδα αλλά λιγότερο από µια φορά την ημέρα. ")
+    atts_related = f"{literals['att_literal_1']} ({literals['att_names_with_relations']})" if literals['att_names_with_relations'] != "" else literals['the_same_v3']
+
+    p1.add_run(f" Σύμφωνα με {atts_related}")
+    if len(npi_lits[3]) > 0:
+        p1.add_run(" αναφέρθηκαν συμπεριφορές")
+        p1.add_run(" μεγάλης σοβαρότητας").bold = True
+        p1.add_run(" όπως ")
+        p1.add_run(create_literal_list(npi_lits[3]))
+        p1.add_run(". ")
+    if len(npi_lits[2]) > 0:
+        is_first = len(npi_lits[3]) == 0
+        is_last = len(npi_lits[1]) == 0
+        ll = ""
+        if is_last:
+            ll = 'Τέλος'
+        if not is_last and not is_first:
+            ll = 'Επίσης'
+
+        p1.add_run(f"{ll} αναφέρθηκαν συμπεριφορές")
+        p1.add_run(" μέτριας σοβαρότητας").bold = True
+        p1.add_run(" όπως ")
+        p1.add_run(create_literal_list(npi_lits[2]))
+        p1.add_run(". ")
+    if len(npi_lits[1]) > 0:
+        is_only = len(npi_lits[3]) == 0 or len(npi_lits[2]) == 0
+        ll = ""
+        if not is_only:
+            ll = 'Τέλος'
+        p1.add_run(f"{ll} αναφέρθηκαν συμπεριφορές")
+        p1.add_run(" ήπιας σοβαρότητας").bold = True
+        p1.add_run(" όπως ")
+        p1.add_run(create_literal_list(npi_lits[1]))
+        p1.add_run(". ")
+
+    if len(npi_lits[1]) == 0 and len(npi_lits[2]) == 0 and len(npi_lits[3]) == 0:
+        p1.add_run(" δεν αναφέρθηκαν ").bold = True
+        p1.add_run(f"νευροψυχιατρικά συμπτώματα σχετικά με {npi_lits['all']}. ")
 
     p1.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY
-    p1.runs[-1].font.color.rgb = RGBColor(255, 0, 0)
+

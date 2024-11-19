@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import RGBColor
 

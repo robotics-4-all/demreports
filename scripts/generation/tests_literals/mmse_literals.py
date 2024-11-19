@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 # optikoxwrikes
 
 # visuospatial_score

@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 def create_literal_list(items):
     """
     Creates a string representation of a list of items, formatted with commas and the word "και" before the last item.

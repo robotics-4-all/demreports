@@ -1,3 +1,4 @@
+# pylint: disable=C0301
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
 def handle_s1_revisit(parsed, document, literals, print_output = False):

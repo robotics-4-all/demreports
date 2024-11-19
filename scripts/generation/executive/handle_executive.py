@@ -1,5 +1,6 @@
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import RGBColor
+# pylint: disable=C0301
 
 from generation.tests_literals.fucas_literals import fucas_literals
 

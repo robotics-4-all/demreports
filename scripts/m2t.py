@@ -1,6 +1,7 @@
 """
 Implements the logic for the model to text transformation.
 """
+# pylint: disable=C0301
 
 from textx import metamodel_from_file
 from docx import Document

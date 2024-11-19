@@ -9,7 +9,7 @@ from docx.shared import RGBColor
 from generation.tests_literals.ravlt_literals import ravlt_literals
 from generation.tests_literals.rocft_literals import rocft_literals
 
-def handle_memory_conclusions(parsed, document, literals, print_output = False):
+def handle_memory_conclusions(parsed, document, literals):
     """
     Generates a paragraph summarizing memory performance conclusions and adds it to the given document.
 

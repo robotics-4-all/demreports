@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 def handle_exam(parsed, document):
     """
     Handles the addition of report information to a document.

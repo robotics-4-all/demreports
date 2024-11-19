@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 def get_relations_literals():
     """
     Returns a dictionary containing relationship literals in Greek.

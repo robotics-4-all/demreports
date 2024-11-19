@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 from textx import get_children_of_type
 
 def parse_model(model):

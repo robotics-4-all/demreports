@@ -1,4 +1,5 @@
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+# pylint: disable=C0301
 
 def handle_signature(document):
     """

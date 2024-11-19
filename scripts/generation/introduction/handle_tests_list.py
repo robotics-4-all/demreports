@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 def handle_tests_list(parsed, document):
     """
     Adds a list of test descriptions to a document based on the keys present in the parsed dictionary.

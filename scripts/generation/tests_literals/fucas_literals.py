@@ -1,5 +1,5 @@
 from generation.utilities.create_literal_list import create_literal_list
-
+# pylint: disable=C0301
 def fucas_literals(results):
     """
     Analyzes the given results and categorizes them into various cognitive and functional performance metrics.

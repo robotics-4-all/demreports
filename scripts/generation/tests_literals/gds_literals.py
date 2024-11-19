@@ -1,7 +1,7 @@
 """
 File containing the literals for the GDS test cases
 """
-
+# pylint: disable=C0301
 from generation.utilities.create_literal_list import create_literal_list
 
 def gds_literals(results):

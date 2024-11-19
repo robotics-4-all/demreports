@@ -1,3 +1,4 @@
+# pylint: disable=C0301
 from datetime import datetime
 
 def date_difference(date1, date2):

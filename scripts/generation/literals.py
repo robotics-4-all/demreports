@@ -1,3 +1,5 @@
+# pylint: disable=C0301
+
 from generation.utilities.get_relations_literals import get_relations_literals
 from generation.utilities.date_difference import date_difference
 
@@ -19,6 +21,7 @@ def generate_literals(parsed):
     ret["article_v3"] = "της" if gender == "F" else "του"
     ret["the_same"] = "της ίδιας" if gender == "F" else "του ίδιου"
     ret["the_same_v2"] = "στην ίδια" if gender == "F" else "στον ίδιο"
+    ret["the_same_v3"] = "την ίδια" if gender == "F" else "τον ίδιο"
 
     # Patient info
     ret["full_name"] = f"{patient.surname} {patient.name}"

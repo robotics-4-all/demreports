@@ -1,5 +1,6 @@
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import RGBColor
+# pylint: disable=C0301
 
 def handle_conclusions(parsed, document, literals, print_output = False):
     p1 = document.add_paragraph()

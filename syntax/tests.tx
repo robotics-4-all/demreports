@@ -82,6 +82,43 @@ NPI:
     (
         ('date:' date=STRING)?
         ('score:' score=INT)
+
+        ('delusions:' delusions=INT)?
+        ('delusions_freq:' delusions_freq=INT)?
+        ('delusions_severity:' delusions_severity=INT)?
+        ('hallucinations:' hallucinations=INT)?
+        ('hallucinations_freq:' hallucinations_freq=INT)?
+        ('hallucinations_severity:' hallucinations_severity=INT)?
+        ('agitation:' agitation=INT)?
+        ('agitation_freq:' agitation_freq=INT)?
+        ('agitation_severity:' agitation_severity=INT)?
+        ('depression:' depression=INT)?
+        ('depression_freq:' depression_freq=INT)?
+        ('depression_severity:' depression_severity=INT)?
+        ('anxiety:' anxiety=INT)?
+        ('anxiety_freq:' anxiety_freq=INT)?
+        ('anxiety_severity:' anxiety_severity=INT)?
+        ('elation:' elation=INT)?
+        ('elation_freq:' elation_freq=INT)?
+        ('elation_severity:' elation_severity=INT)?
+        ('apathy:' apathy=INT)?
+        ('apathy_freq:' apathy_freq=INT)?
+        ('apathy_severity:' apathy_severity=INT)?
+        ('disinhibition:' disinhibition=INT)?
+        ('disinhibition_freq:' disinhibition_freq=INT)?
+        ('disinhibition_severity:' disinhibition_severity=INT)?
+        ('irritability:' irritability=INT)?
+        ('irritability_freq:' irritability_freq=INT)?
+        ('irritability_severity:' irritability_severity=INT)?
+        ('aberrant_motor_activity:' aberrant_motor_activity=INT)?
+        ('aberrant_motor_activity_freq:' aberrant_motor_activity_freq=INT)?
+        ('aberrant_motor_activity_severity:' aberrant_motor_activity_severity=INT)?
+        ('sleep:' sleep=INT)?
+        ('sleep_freq:' sleep_freq=INT)?
+        ('sleep_severity:' sleep_severity=INT)?
+        ('appetite:' appetite=INT)?
+        ('appetite_freq:' appetite_freq=INT)?
+        ('appetite_severity:' appetite_severity=INT)?
     )#
     'end'
 ;
@@ -91,6 +128,8 @@ GDS:
     (
         ('date:' date=STRING)?
         ('score:' score=INT)
+
+        
     )#
     'end'
 ;

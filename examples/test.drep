@@ -83,6 +83,43 @@ end
 
 NPI
     score: 47
+
+    delusions: 1
+    delusions_freq: 1
+    delusions_severity: 1
+    hallucinations: 1
+    hallucinations_freq: 1
+    hallucinations_severity: 1
+    agitation: 1
+    agitation_freq: 1
+    agitation_severity: 1
+    depression: 1
+    depression_freq: 1
+    depression_severity: 1
+    anxiety: 1
+    anxiety_freq: 1
+    anxiety_severity: 1
+    elation: 1
+    elation_freq: 1
+    elation_severity: 1
+    apathy: 1
+    apathy_freq: 1
+    apathy_severity: 1
+    disinhibition: 1
+    disinhibition_freq: 1
+    disinhibition_severity: 1
+    irritability: 1
+    irritability_freq: 1
+    irritability_severity: 1
+    aberrant_motor_activity: 1
+    aberrant_motor_activity_freq: 1
+    aberrant_motor_activity_severity: 1
+    sleep: 1
+    sleep_freq: 1
+    sleep_severity: 1
+    appetite: 1
+    appetite_freq: 1
+    appetite_severity: 1
 end
 
 GDS

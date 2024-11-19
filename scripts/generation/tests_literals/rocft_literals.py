@@ -1,6 +1,7 @@
 """
 File containing the literals for the ROCFT test cases
 """
+# pylint: disable=C0301
 
 def rocft_literals(results, age, education):
     """
@@ -78,14 +79,17 @@ def rocft_literals(results, age, education):
     mild = any(mild_flags)
 
     if severe :
-        ret["recall"] = f"παρουσίασε {'σοβαρή' if results.d_score <= 5 else 'σημαντική'} έκπτωση"
+        ret["recall"] = f"παρουσίασε {'σοβαρή' if results.d_score <= 5 else 'σημαντική'} έκπτωση ({results.d_score}/36)"
         ret["recall_explanation"] = "κατάφερε να ανακαλέσει ελάχιστα στοιχεία"
+        ret["recall_problem"] = True
     elif mild :
-        ret["recall"] = "παρουσίασε έκπτωση"
+        ret["recall"] = f"παρουσίασε έκπτωση ({results.d_score}/36)"
         ret["recall_explanation"] = "δεν κατάφερε να ανακαλέσει σύμφωνα με τα όρια κατωφλίου ικανοποιητικό αριθμό στοιχείων"
+        ret["recall_problem"] = True
     else:
-        ret["recall"] = "δεν παρουσίασε έκπτωση"
+        ret["recall"] = f"δεν παρουσίασε έκπτωση ({results.d_score}/36)"
         ret["recall_explanation"] = "κατάφερε να ανακαλέσει σύμφωνα με τα όρια κατωφλίου ικανοποιητικό αριθμό στοιχείων"
+        ret["recall_problem"] = False
 
     # copy_score
 
@@ -122,6 +126,7 @@ def rocft_literals(results, age, education):
         combos['60-69-6'] and results.c_score <= 28,
     ]
     mild_c = any(mild_flags_c_score)
-    
-    return ret
 
+    ret["copy_problem"] = severe_c or mild_c
+
+    return ret

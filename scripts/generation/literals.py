@@ -18,6 +18,7 @@ def generate_literals(parsed):
     ret["examinee_gender_v2"] = "στην εξεταζόμενη" if gender == "F" else "στον εξεταζόμενο"
     ret["article_v3"] = "της" if gender == "F" else "του"
     ret["the_same"] = "της ίδιας" if gender == "F" else "του ίδιου"
+    ret["the_same_v2"] = "στην ίδια" if gender == "F" else "στον ίδιο"
 
     # Patient info
     ret["full_name"] = f"{patient.surname} {patient.name}"
@@ -53,7 +54,7 @@ def generate_literals(parsed):
         ret["att_names"] = f"κ. {trimmed_name_1} και κ. {trimmed_name_2}"
         ret["att_names_with_relations"] = relations[patient.att_1_rel][patient.att_1_gender] + " κ. " + patient.att_1_name + " και " + relations[patient.att_2_rel][patient.att_2_gender] + " κ. " + patient.att_2_name
     else:
-        ret["att_literal_1"] = "τον ίδιο"
+        ret["att_literal_1"] = "τον ίδιο" if gender == "M" else "την ίδια"
         ret["att_names"] = ""
         ret["att_names_with_relations"] = ""
 

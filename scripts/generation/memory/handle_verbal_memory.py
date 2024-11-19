@@ -1,7 +1,24 @@
+"""
+File that handles the generation of the verbal memory paragraph
+"""
+# pylint: disable=C0301
+
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from generation.tests_literals.ravlt_literals import ravlt_literals
 
 def handle_verbal_memory(parsed, document, literals, print_output = False):
+    """
+    Handles the generation of a paragraph related to verbal memory (RAVLT) in a document.
+
+    Args:
+        parsed (dict): A dictionary containing parsed data, including 'ravlt' and 'patient' information.
+        document (Document): A python-docx Document object where the paragraph will be added.
+        literals (dict): A dictionary containing literal strings used in the paragraph.
+        print_output (bool, optional): If True, the generated paragraph text will be printed to the console. Defaults to False.
+
+    Returns:
+        None
+    """
     # check we have RAVLT data
     if 'ravlt' not in parsed:
         return

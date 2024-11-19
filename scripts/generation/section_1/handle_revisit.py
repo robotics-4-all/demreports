@@ -22,6 +22,8 @@ def handle_s1_revisit(parsed, document, literals, print_output = False):
 
     p1 = document.add_paragraph()
 
-    p1.add_run(f"Η ίδια εκτίμηση διενεργήθηκε στα πλαίσια ελέγχου ρουτίνας μετά από {literals['revisit_after']} στις {literals['revisit_date']}, προκειμένου να ελεγχθεί η αποτελεσματικότητα της νοητικής παρέμβασης στην οποία συμμετείχε το προηγούμενο διάστημα, με την χρήση της ίδιας συστοιχίας. Η καθημερινή λειτουργικότητα ελέγχθηκε με αντικειμενικό τρόπο (εκτίμηση στην ίδια) καθώς και μέσα από πληροφορίες που ελήφθησαν από {literals['att_literal_1']} ({literals['att_names_with_relations']}). Όσον αφορά τις διαταραχές συμπεριφοράς, οι πληροφορίες ελήφθησαν επίσης από {literals['att_literal_1']} {literals['att_names']}.")
+    atts_related = f"καθώς και μέσα από πληροφορίες που ελήφθησαν από {literals['att_literal_1']} ({literals['att_names_with_relations']})" if literals['att_names_with_relations'] != "" else ""
+
+    p1.add_run(f"Η ίδια εκτίμηση διενεργήθηκε στα πλαίσια ελέγχου ρουτίνας μετά από {literals['revisit_after']} στις {literals['revisit_date']}, προκειμένου να ελεγχθεί η αποτελεσματικότητα της νοητικής παρέμβασης στην οποία συμμετείχε το προηγούμενο διάστημα, με την χρήση της ίδιας συστοιχίας. Η καθημερινή λειτουργικότητα ελέγχθηκε με αντικειμενικό τρόπο (εκτίμηση {literals['the_same_v2']}){atts_related}. Όσον αφορά τις διαταραχές συμπεριφοράς, οι πληροφορίες ελήφθησαν επίσης από {literals['att_literal_1']} {literals['att_names']}.")
 
     p1.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY

@@ -1,3 +1,8 @@
+"""
+File that contains the literals for the RAVLT test cases
+"""
+# pylint: disable=C0301
+
 def ravlt_literals(ravlt_results, age):
     """
     Analyzes RAVLT (Rey Auditory Verbal Learning Test) results and provides a summary of learning and memory retention abilities.
@@ -23,14 +28,15 @@ def ravlt_literals(ravlt_results, age):
     mild = (age < 70 and ls <= 11.5) or (age < 80 and ls <= 8.5) or ls <= 7.5
 
     if severe :
-        ret["learning"] = f"παρουσίασε {'σοβαρά' if ls == 0 else 'σημαντικά'} ελλείμματα"
+        ret["learning"] = f"παρουσίασε {'σοβαρά' if ls == 0 else 'σημαντικά'} ελλείμματα ({ls}/15)"
         ret["learning_explanation"] = "υπήρχε δυσκολία όσον αφορά την κωδικοποίηση νέων πληροφοριών, και δυσκολία στην χρήση αποτελεσματικών στρατηγικών μάθησης, προκειμένου να γίνει η αποθήκευση στην μακρόχρονη μνήμη"
     elif mild :
-        ret["learning"] = "παρουσίασε ελλείμματα"
+        ret["learning"] = f"παρουσίασε ελλείμματα ({ls}/15)"
         ret["learning_explanation"] = "υπήρχε δυσκολία όσον αφορά την κωδικοποίηση νέων πληροφοριών, και δυσκολία στην χρήση αποτελεσματικών στρατηγικών μάθησης, προκειμένου να γίνει η αποθήκευση στην μακρόχρονη μνήμη"
     else:
-        ret["learning"] = "δεν παρουσίασε ελλείμματα"
+        ret["learning"] = f"δεν παρουσίασε ελλείμματα ({ls}/15)"
         ret["learning_explanation"] = "δεν υπήρχε δυσκολία όσον αφορά την κωδικοποίηση νέων πληροφοριών, όπως και στην χρήση αποτελεσματικών στρατηγικών μάθησης, προκειμένου να γίνει η αποθήκευση στην μακρόχρονη μνήμη"
+    ret["learning_problem"] = severe or mild
 
     # Maintaining:
     # <70: 5.5, 7.5, ok
@@ -42,13 +48,14 @@ def ravlt_literals(ravlt_results, age):
     mild = (age < 70 and ms <= 7.5) or (age < 80 and ms <= 5.5) or ms <= 4.5
 
     if severe :
-        ret["maintain"] = f"παρουσίασε {'σοβαρή' if ls == 0 else 'σημαντική'} έκπτωση"
+        ret["maintain"] = f"παρουσίασε {'σοβαρή' if ls == 0 else 'σημαντική'} έκπτωση ({ms}/15)"
         ret["maintain_explanation"] = "δεν κατάφερε να ανακαλέσει/συγκρατήσει σύμφωνα με τα όρια κατωφλίου, σχεδόν καμία από τις λέξεις για τις οποίες είχε προηγηθεί λεκτική μάθηση"
     elif mild :
-        ret["maintain"] = "παρουσίασε έκπτωση"
+        ret["maintain"] = f"παρουσίασε έκπτωση ({ms}/15)"
         ret["maintain_explanation"] = "δεν κατάφερε να ανακαλέσει/συγκρατήσει σύμφωνα με τα όρια κατωφλίου, ικανοποιητικό αριθμό λέξεων για τις οποίες είχε προηγηθεί λεκτική μάθηση"
     else:
-        ret["maintain"] = "δεν παρουσίασε έκπτωση"
+        ret["maintain"] = f"δεν παρουσίασε έκπτωση ({ms}/15)"
         ret["maintain_explanation"] = "κατάφερε να ανακαλέσει/συγκρατήσει σύμφωνα με τα όρια κατωφλίου, ικανοποιητικό αριθμό λέξεων για τις οποίες είχε προηγηθεί λεκτική μάθηση"
-    
+    ret["maintain_problem"] = severe or mild
+
     return ret

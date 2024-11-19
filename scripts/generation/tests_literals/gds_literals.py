@@ -2,7 +2,6 @@
 File containing the literals for the GDS test cases
 """
 # pylint: disable=C0301
-from generation.utilities.create_literal_list import create_literal_list
 
 def gds_literals(results):
     """
@@ -24,5 +23,5 @@ def gds_literals(results):
         return f"διαπιστώθηκε διαταραχή της διάθεσης σε επίπεδο υποκατάθλιψης ({results.score}/15)"
     elif results.score <= 11:
         return f"διαταραχή της διάθεσης σε επίπεδο μέτριας κατάθλιψης ({results.score}/15)"
-    else:
-        return f"διαταραχή της διάθεσης σε επίπεδο σοβαρής κατάθλιψης ({results.score}/15)"
+
+    return f"διαταραχή της διάθεσης σε επίπεδο σοβαρής κατάθλιψης ({results.score}/15)"

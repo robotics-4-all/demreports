@@ -6,7 +6,7 @@ from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import RGBColor
 # pylint: disable=C0301
 
-def handle_conclusions(parsed, document, literals, print_output = False):
+def handle_conclusions(parsed, document, literals):
     """
     Handles the generation of the conclusions section in a document.
 

@@ -1,3 +1,7 @@
+"""
+File that checks the syntax of a demReport file.
+"""
+
 from textx import metamodel_from_file
 
 # Load your grammar from a .tx file

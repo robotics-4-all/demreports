@@ -43,7 +43,7 @@ def rocft_literals(results, age, education):
     # >=70 & <=12 edu: 11.5
     # >=70 & >=13 edu: 11.5
     severe_flags_d_score = [
-        combos['50-59-6'] and results.d_score <= 11.5, 
+        combos['50-59-6'] and results.d_score <= 11.5,
         combos['50-59-12'] and results.d_score <= 14,
         combos['50-59-13'] and results.d_score <= 15,
         combos['60-69-6'] and results.d_score <= 11,

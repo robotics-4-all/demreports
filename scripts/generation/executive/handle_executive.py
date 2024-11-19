@@ -1,10 +1,9 @@
+# pylint: disable=C0301
 """
 File that contains the function to handle the generation of the executive functions section in a document.
 """
-# pylint: disable=C0301
 
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
-# pylint: disable=C0301
 
 from generation.tests_literals.fucas_literals import fucas_literals
 from generation.utilities.create_literal_list import create_literal_list

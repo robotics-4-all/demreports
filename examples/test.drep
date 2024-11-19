@@ -14,12 +14,12 @@ PatientInfo
     unit: "saint helen"
     training_suggestion: true
 
-    attendant_1_existed: true
+    attendant_1_existed: false
     attendant_1_name: "Attendant1"
     attendant_1_relationship: "child"
     attendant_1_gender: "M"
     
-    attendant_2_existed: true
+    attendant_2_existed: false
     attendant_2_name: "Attendant2"
     attendant_2_relationship: "husband"
     attendant_2_gender: "F"

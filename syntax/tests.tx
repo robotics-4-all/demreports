@@ -42,6 +42,13 @@ FUCAS:
         ('sequence:' sequence=INT)?
         ('accuracy:' accuracy=INT)?
         ('goal:' goal=INT)?
+
+        ('obj_medication:' obj_medication=INT)?
+        ('obj_telephone:' obj_telephone=INT)?
+        ('obj_financial:' obj_financial=INT)?
+        ('obj_hygiene:' obj_hygiene=INT)?
+        ('obj_orientation:' obj_orientation=INT)?
+        ('obj_dressing:' obj_dressing=INT)?
     )#
     'end'
 ;
@@ -51,6 +58,21 @@ FRSSD:
     (
         ('date:' date=STRING)?
         ('score:' score=INT)
+
+        ('nutrition:' nutrition=INT)?
+        ('dressing:' dressing=INT)?
+        ('akrateia:' akrateia=INT)?
+        ('speech:' speech=INT)?
+        ('sleep:' sleep=INT)?
+        ('face_recognition:' face_recognition=INT)?
+        ('hygiene:' hygiene=INT)?
+        ('name_memory:' name_memory=INT)?
+        ('episodic_memory:' episodic_memory=INT)?
+        ('attention:' attention=INT)?
+        ('confusion:' confusion=INT)?
+        ('orientation:' orientation=INT)?
+        ('emotional_state:' emotional_state=INT)?
+        ('social_responsiveness:' social_responsiveness=INT)?
     )#
     'end'
 ;

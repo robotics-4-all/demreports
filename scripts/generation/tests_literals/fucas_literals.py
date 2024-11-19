@@ -1,16 +1,4 @@
-## Εκτελεστικές λειτουργίες
-
-# total score: 42 normal, >=44 minor, >=50 dementia
-
-# epimerous: 1 ok, >=2 not ok
-
-# παρουσίαζε δυσκολίες σε ικανότητες που είναι απαραίτητες προκειμένου να ολοκληρωθεί σωστά η εκτέλεση σύνθετων νοητικών έργων/δραστηριοτήτων --> >2
-
-# extra for prospective_memory + accuracy
-
-## ----------------------------------------
-
-# Καθημερινή λειτουργικότητα ++
+from generation.utilities.create_literal_list import create_literal_list
 
 def fucas_literals(results):
     ret = {}
@@ -61,16 +49,18 @@ def fucas_literals(results):
     else:
         ret['individual_unaffected'].append("ολοκλήρωσης στόχου")
 
-    ret['affected'] = ""
-    ret['unaffected'] = ""
-    if len(ret['individual_affected']) > 1:
-        ret['affected'] = ", ".join(ret['individual_affected'][:-1]) + " και " + ret['individual_affected'][-1]
-    elif len(ret['individual_affected']) == 1:
-        ret['affected'] = ret['individual_affected'][0]
+    ret['affected'] = create_literal_list(ret['individual_affected'])
+    ret['unaffected'] = create_literal_list(ret['individual_unaffected'])
 
-    if len(ret['individual_unaffected']) > 1:
-        ret['unaffected'] = ", ".join(ret['individual_unaffected'][:-1]) + " και " + ret['individual_unaffected'][-1]
-    elif len(ret['individual_unaffected']) == 1:
-        ret['unaffected'] = ret['individual_unaffected'][0]
+    ret['objective'] = {
+        'no': [],
+        'yes': []
+    }
+    ret['objective']['no' if results.obj_medication < 9 else 'yes'].append(f"λήψης της φαρμακευτικής αγωγής ({results.obj_medication}/27)")
+    ret['objective']['no' if results.obj_telephone < 9 else 'yes'].append(f"επικοινωνίας με την χρήση τηλεφώνου ({results.obj_telephone}/27)")
+    ret['objective']['no' if results.obj_financial < 9 else 'yes'].append(f"οικονομικών συναλλαγών ({results.obj_financial}/27)")
+    ret['objective']['no' if results.obj_hygiene < 9 else 'yes'].append(f"διατήρησης της προσωπικής υγιεινής ({results.obj_hygiene}/27)")
+    ret['objective']['no' if results.obj_orientation < 9 else 'yes'].append(f"προσανατολισμού σε χώρο ({results.obj_orientation}/27)")
+    ret['objective']['no' if results.obj_dressing < 9 else 'yes'].append(f"ένδυσης")
 
     return ret

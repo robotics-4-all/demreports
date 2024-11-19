@@ -53,10 +53,32 @@ FUCAS
     sequence: 1
     accuracy: 1
     goal: 2
+
+    obj_medication: 9
+    obj_telephone: 9
+    obj_financial: 9
+    obj_hygiene: 9
+    obj_orientation: 9
+    obj_dressing: 10
 end
 
 FRSSD
     score: 16
+
+    nutrition: 0
+    dressing: 0
+    akrateia: 0
+    speech: 3
+    sleep: 0
+    face_recognition: 0
+    hygiene: 0
+    name_memory: 0
+    episodic_memory: 3
+    attention: 0
+    confusion: 0
+    orientation: 0
+    emotional_state: 0
+    social_responsiveness: 0
 end
 
 NPI

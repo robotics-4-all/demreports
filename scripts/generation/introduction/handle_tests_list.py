@@ -24,21 +24,21 @@ def handle_tests_list(parsed, document):
     """
 
     p2 = document.add_paragraph()
-    if 'mmse' in parsed:
+    if 'mmse' in parsed and parsed['mmse'].administered:
         p2.add_run('•  Σύντομη εξέταση της νοητικής κατάστασης MMSE\n').bold = True
-    if 'ravlt' in parsed:
+    if 'ravlt' in parsed and parsed['ravlt'].administered:
         p2.add_run('•  Δοκιμασία λεκτικής ακουστικής μάθησης RAVLT\n').bold = True
-    if 'rocft' in parsed:
+    if 'rocft' in parsed and parsed['rocft'].administered:
         p2.add_run('•  Δοκιμασία σύνθετης φιγούρας ROCFT\n').bold = True
-    if 'fucas' in parsed:
+    if 'fucas' in parsed and parsed['fucas'].administered:
         p2.add_run('•  Δοκιμασία νοητικής λειτουργικής εκτίμησης FUCAS\n').bold = True
-    if 'frssd' in parsed:
+    if 'frssd' in parsed and parsed['frssd'].administered:
         p2.add_run('•  Κλίμακα λειτουργικής εκτίμησης συμπτωμάτων άνοιας FRSSD\n').bold = True
-    if 'npi' in parsed:
+    if 'npi' in parsed and parsed['npi'].administered:
         p2.add_run('•  Κλίμακα Νευροψυχιατρικών Συμπτωμάτων NPI\n').bold = True
-    if 'gds' in parsed:
+    if 'gds' in parsed and parsed['gds'].administered:
         p2.add_run('•  Γηριατρική κλίμακα κατάθλιψης GDS\n').bold = True
-    if 'sast' in parsed:
+    if 'sast' in parsed and parsed['sast'].administered:
         p2.add_run('•  Ερωτηματολόγιο εκτίμησης άγχους SAST\n').bold = True
-    if 'bdi' in parsed:
+    if 'bdi' in parsed and parsed['bdi'].administered:
         p2.add_run('•  Beck Depression Inventory BDI\n').bold = True

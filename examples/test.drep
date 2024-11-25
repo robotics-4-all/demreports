@@ -5,10 +5,13 @@ end
 PatientInfo
     first_name: "Name"
     last_name: "Surname"
+    father_name: "George"
+    mother_name: "dsa"
     gender: "F"
     age: 78
+    amka: 6987456756
     education: 13
-    enesthesia: true
+    enesthesia: "ΝΑΙ"
     date_medical_history: "6/12/2012"
     date_npse: "5/12/2012"
     unit: "saint helen"
@@ -29,23 +32,28 @@ PatientInfo
 end
 
 RAVLT
+    administered: true
     learning_score: 0
     maintaining_score: 15
     wm_score: 8
 end
 
 ROCFT
+    administered: true
     copy_score: 0
-    delayed_recall_score: 18
+    delayed_recall_score: 18.5
 end
 
 MMSE
+    administered: true
     score: 19
     visuospatial_score: 8
 end
 
 FUCAS
+    administered: false
     score: 44 // total_score
+
     understanding: 2
     prospective_memory: 2
     planning: 1
@@ -63,6 +71,7 @@ FUCAS
 end
 
 FRSSD
+    administered: true
     score: 16
 
     nutrition: 0
@@ -82,6 +91,7 @@ FRSSD
 end
 
 NPI
+    administered: true
     score: 47
 
     delusions_freq: 0
@@ -111,13 +121,16 @@ NPI
 end
 
 GDS
+    administered: true
     score: 2
 end
 
 SAST
+    administered: true
     score: 0
 end
 
 BDI
+    administered: true
     score: 0
 end

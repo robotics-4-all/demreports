@@ -79,15 +79,15 @@ def rocft_literals(results, age, education):
     mild = any(mild_flags)
 
     if severe :
-        ret["recall"] = f"παρουσίασε {'σοβαρή' if results.d_score <= 5 else 'σημαντική'} έκπτωση ({results.d_score}/36)"
+        ret["recall"] = f"παρουσίασε {'σοβαρή' if results.d_score <= 5 else 'σημαντική'} έκπτωση"
         ret["recall_explanation"] = "κατάφερε να ανακαλέσει ελάχιστα στοιχεία"
         ret["recall_problem"] = True
     elif mild :
-        ret["recall"] = f"παρουσίασε έκπτωση ({results.d_score}/36)"
+        ret["recall"] = "παρουσίασε έκπτωση"
         ret["recall_explanation"] = "δεν κατάφερε να ανακαλέσει σύμφωνα με τα όρια κατωφλίου ικανοποιητικό αριθμό στοιχείων"
         ret["recall_problem"] = True
     else:
-        ret["recall"] = f"δεν παρουσίασε έκπτωση ({results.d_score}/36)"
+        ret["recall"] = "δεν παρουσίασε έκπτωση"
         ret["recall_explanation"] = "κατάφερε να ανακαλέσει σύμφωνα με τα όρια κατωφλίου ικανοποιητικό αριθμό στοιχείων"
         ret["recall_problem"] = False
 

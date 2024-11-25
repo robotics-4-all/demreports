@@ -28,10 +28,10 @@ def handle_visual_memory(parsed, document, literals, print_output = False):
     rocft_lits = rocft_literals(parsed['rocft'], parsed['patient'].age, parsed['patient'].education)
     p1 = document.add_paragraph()
 
-    p1_r1 = p1.add_run("Επεισοδιακή οπτική μνήμη: ")
+    p1_r1 = p1.add_run("Οπτική μνήμη επεισοδίων: ")
     p1_r1.italic = True
 
-    printable = f"Η επεισοδιακή οπτική μνήμη {rocft_lits['recall']}, έτσι όπως διαπιστώθηκε από την ανάκληση της σύνθετης φιγούρας ROCFT, αναλόγως της ηλικίας και της εκπαίδευσης του εξεταζόμενου. {literals['full_with_article_capital']} {rocft_lits['recall_explanation']}, από τη φιγούρα, την οποία είχε προηγουμένως κληθεί να αντιγράψει."
+    printable = f"Η οπτική μνήμη επεισοδίων {rocft_lits['recall']}, έτσι όπως διαπιστώθηκε από την ανάκληση της σύνθετης φιγούρας ROCFT, αναλόγως της ηλικίας και της εκπαίδευσης του εξεταζόμενου. {literals['full_with_article_capital']} {rocft_lits['recall_explanation']}, από τη φιγούρα, την οποία είχε προηγουμένως κληθεί να αντιγράψει."
 
     p1.add_run(printable)
 

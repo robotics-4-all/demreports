@@ -51,12 +51,12 @@ def fucas_literals(results):
         'no': [],
         'yes': []
     }
-    ret['objective']['no' if results.obj_medication < 9 else 'yes'].append(f"λήψης της φαρμακευτικής αγωγής ({results.obj_medication}/27)")
-    ret['objective']['no' if results.obj_telephone < 9 else 'yes'].append(f"επικοινωνίας με την χρήση τηλεφώνου ({results.obj_telephone}/27)")
-    ret['objective']['no' if results.obj_financial < 9 else 'yes'].append(f"οικονομικών συναλλαγών ({results.obj_financial}/27)")
-    ret['objective']['no' if results.obj_hygiene < 9 else 'yes'].append(f"διατήρησης της προσωπικής υγιεινής ({results.obj_hygiene}/27)")
-    ret['objective']['no' if results.obj_orientation < 9 else 'yes'].append(f"προσανατολισμού σε χώρο ({results.obj_orientation}/27)")
-    ret['objective']['no' if results.obj_dressing < 9 else 'yes'].append(f"ένδυσης ({results.obj_dressing}/27)")
+    ret['objective']['no' if results.obj_medication < 9 else 'yes'].append("λήψης της φαρμακευτικής αγωγής")
+    ret['objective']['no' if results.obj_telephone < 9 else 'yes'].append("επικοινωνίας με την χρήση τηλεφώνου")
+    ret['objective']['no' if results.obj_financial < 9 else 'yes'].append("οικονομικών συναλλαγών")
+    ret['objective']['no' if results.obj_hygiene < 9 else 'yes'].append("διατήρησης της προσωπικής υγιεινής")
+    ret['objective']['no' if results.obj_orientation < 9 else 'yes'].append("προσανατολισμού σε χώρο")
+    ret['objective']['no' if results.obj_dressing < 9 else 'yes'].append("ένδυσης")
 
     ret['examples'] = {
         "κατανόησης": "να κατανοήσει μια πληροφορία/οδηγία όταν είναι σύνθετη και πιθανόν να χρειάζεται να επαναληφθεί", 

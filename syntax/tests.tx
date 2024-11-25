@@ -2,7 +2,7 @@
 MMSE: 
     'MMSE'
     (
-        ('date:' date=STRING)?
+        ('administered:' administered=BOOL)
         ('score:' score=INT)
         ('visuospatial_score:' v_score=INT)?
     )#
@@ -11,8 +11,8 @@ MMSE:
 
 RAVLT: 
     'RAVLT'
-    (
-        ('date:' date=STRING)?
+    (   
+        ('administered:' administered=BOOL)
         ('learning_score:' l_score=INT)
         ('maintaining_score:' m_score=INT)
         ('wm_score:' wm_score=INT)?
@@ -23,9 +23,9 @@ RAVLT:
 ROCFT: 
     'ROCFT'
     (
-        ('date:' date=STRING)?
-        ('copy_score:' c_score=INT)
-        ('delayed_recall_score:' d_score=INT)
+        ('administered:' administered=BOOL)
+        ('copy_score:' c_score=FLOAT)
+        ('delayed_recall_score:' d_score=FLOAT)
     )#
     'end'
 ;
@@ -33,8 +33,9 @@ ROCFT:
 FUCAS: 
     'FUCAS'
     (
-        ('date:' date=STRING)?
+        ('administered:' administered=BOOL)
         ('score:' score=INT)
+
         ('understanding:' understanding=INT)?
         ('prospective_memory:' prospective_memory=INT)?
         ('planning:' planning=INT)?
@@ -56,7 +57,7 @@ FUCAS:
 FRSSD: 
     'FRSSD'
     (
-        ('date:' date=STRING)?
+        ('administered:' administered=BOOL)
         ('score:' score=INT)
 
         ('nutrition:' nutrition=INT)?
@@ -80,7 +81,7 @@ FRSSD:
 NPI: 
     'NPI'
     (
-        ('date:' date=STRING)?
+        ('administered:' administered=BOOL)
         ('score:' score=INT)
 
         ('delusions_freq:' delusions_freq=INT)?
@@ -114,7 +115,7 @@ NPI:
 GDS: 
     'GDS'
     (
-        ('date:' date=STRING)?
+        ('administered:' administered=BOOL)
         ('score:' score=INT)
 
 
@@ -125,7 +126,7 @@ GDS:
 SAST: 
     'SAST'
     (
-        ('date:' date=STRING)?
+        ('administered:' administered=BOOL)
         ('score:' score=INT)
     )#
     'end'
@@ -134,8 +135,10 @@ SAST:
 BDI: 
     'BDI'
     (
-        ('date:' date=STRING)?
+        ('administered:' administered=BOOL)
         ('score:' score=INT)
     )#
     'end'
 ;
+
+// Hindi

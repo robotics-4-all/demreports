@@ -34,20 +34,20 @@ def frssd_literals(results):
         ret[class_scores[getattr(results, attr)]].append(attr)
 
     ret["literals"] = {
-        "nutrition": f"της διατροφής ({results.nutrition}/3)",
-        "dressing": f"της ένδυσης ({results.dressing}/3)",
-        "akrateia": f"της συγκράτησης ούρων ({results.akrateia}/3)",
-        "speech": f"της ομιλίας ({results.speech}/3)",
-        "sleep": f"του ύπνου ({results.sleep}/3)",
-        "face_recognition": f"της αναγνώρισης προσώπων ({results.face_recognition}/3)",
-        "hygiene": f"της διατήρησης της προσωπικής υγιεινής ({results.hygiene}/3)",
-        "name_memory": f"της μνήμης ονομάτων ({results.name_memory}/3)",
-        "episodic_memory": f"της μνήμης γεγονότων ({results.episodic_memory}/3)",
-        "attention": f"της εγρήγορσης/προσοχής ({results.attention}/3)",
-        "confusion": f"της σφαιρικής σύγχυσης ({results.confusion}/3)",
-        "orientation": f"του προσανατολισμού σε χώρο και χρόνο ({results.orientation}/3)",
-        "emotional_state": f"της συγκινησιακής κατάστασης ({results.emotional_state}/3)",
-        "social_responsiveness": f"της κοινωνικής απαντητικότητας ({results.social_responsiveness}/3)",
+        "nutrition": "της διατροφής",
+        "dressing": "της ένδυσης",
+        "akrateia": "της συγκράτησης ούρων",
+        "speech": "της ομιλίας",
+        "sleep": "του ύπνου",
+        "face_recognition": "της αναγνώρισης προσώπων",
+        "hygiene": "της διατήρησης της προσωπικής υγιεινής",
+        "name_memory": "της μνήμης ονομάτων",
+        "episodic_memory": "της μνήμης γεγονότων",
+        "attention": "της εγρήγορσης/προσοχής",
+        "confusion": "της σφαιρικής σύγχυσης",
+        "orientation": "του προσανατολισμού σε χώρο και χρόνο",
+        "emotional_state": "της συγκινησιακής κατάστασης",
+        "social_responsiveness": "της κοινωνικής απαντητικότητας",
     }
 
     ret["finals"] = {

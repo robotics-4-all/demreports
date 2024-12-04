@@ -35,16 +35,20 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
     fucas_lits = fucas_literals(parsed['fucas'])
     frssd_lits = frssd_literals(parsed['frssd'])
 
+    fucas_admin = parsed['fucas'].administered
+    frssd_admin = parsed['frssd'].administered
+    
     printable_1 = "Από τα αποτελέσματα της αντικειμενικής εκτίμησης μέσω της δοκιμασίας καθημερινής λειτουργικότητας (FUCAS)"
-    if len(fucas_lits['objective']['no']) > 0:
-        printable_1 += f" δεν διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['no']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['no'])}"
+    # if len(fucas_lits['objective']['no']) > 0:
+    #     printable_1 += f" δεν διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['no']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['no'])}"
     if len(fucas_lits['objective']['yes']) > 0:
         printable_1 += f"{', ενώ' if len(fucas_lits['objective']['no']) > 0 else ''} διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['yes']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['yes'])}"
     printable_1 += ". "
 
-    p1.add_run(printable_1)
-    if print_output:
-        print(printable_1)
+    if fucas_admin:
+        p1.add_run(printable_1)
+        if print_output:
+            print(printable_1)
 
     # 0: no, 1: mild, 2: μέτρια, 3: σοβαρά
     # nutrition: διατροφής
@@ -55,12 +59,13 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
     atts_exist = parsed["patient"].att_1_existed or parsed["patient"].att_2_existed
     atts_str = f"με {literals['att_literal_1']} ({literals['att_names_with_relations']})" if atts_exist else literals["examinee_gender_v2"]
 
-    printable_2 = f"Σύμφωνα με την συνέντευξη που πραγματοποιήθηκε {atts_str} και μετά από την χορήγηση ημι-δομημένου ερωτηματολογίου (FRSSD), {frssd_lits['finals']['no']}{frssd_lits['finals']['mild']}{frssd_lits['finals']['moderate']}{frssd_lits['finals']['severe']}."
+    printable_2 = f"Σύμφωνα με την συνέντευξη που πραγματοποιήθηκε {atts_str} και μετά από την χορήγηση ημι-δομημένου ερωτηματολογίου (FRSSD){frssd_lits['finals']['mild']}{frssd_lits['finals']['moderate']}{frssd_lits['finals']['severe']}."
 
-    p1.add_run(printable_2)
+    if frssd_admin:
+        p1.add_run(printable_2)
 
     printable_3 = f" Τα παραπάνω ευρήματα (η ύπαρξη μέτριων ή σοβαρών ελλειμάτων) συνηγορούν στο ότι για το χρονικό διάστημα στο οποίο αναφέρεται η νευροψυχολογική εκτίμηση, {literals['full_with_article']} χρειαζόταν υπενθύμιση, βοήθεια και στήριξη μέσω τρίτων προσώπων προκειμένου να μπορεί να ανταπεξέλθει στις σύνθετες αλλά και στις πιο απλές δραστηριότητες της καθημερινής ζωής."
-    if frssd_lits['finals']['moderate'] != "" or frssd_lits['finals']['severe'] != "":
+    if frssd_admin and (frssd_lits['finals']['moderate'] != "" or frssd_lits['finals']['severe'] != ""):
         p1.add_run(printable_3)
 
     p1.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY

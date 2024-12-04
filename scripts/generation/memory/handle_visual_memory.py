@@ -22,7 +22,7 @@ def handle_visual_memory(parsed, document, literals, print_output = False):
         None
     """
     # check we have ROCFT data
-    if 'rocft' not in parsed:
+    if 'rocft' not in parsed or parsed['rocft'].administered == False:
         return
 
     rocft_lits = rocft_literals(parsed['rocft'], parsed['patient'].age, parsed['patient'].education)

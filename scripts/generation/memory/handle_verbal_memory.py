@@ -20,7 +20,7 @@ def handle_verbal_memory(parsed, document, literals, print_output = False):
         None
     """
     # check we have RAVLT data
-    if 'ravlt' not in parsed:
+    if 'ravlt' not in parsed or parsed['ravlt'].administered == False:
         return
 
     ravlt_lits = ravlt_literals(parsed['ravlt'], parsed['patient'].age)

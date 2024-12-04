@@ -40,7 +40,7 @@ def handle_neuropsychological_symptoms(parsed, document, literals):
         is_first = len(npi_lits[3]) == 0
         is_last = len(npi_lits[1]) == 0
         ll = ""
-        if is_last:
+        if is_last and not is_first:
             ll = 'Τέλος'
         if not is_last and not is_first:
             ll = 'Επίσης'

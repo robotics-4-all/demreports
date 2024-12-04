@@ -63,9 +63,10 @@ def frssd_literals(results):
     no_n = len(ret["no"])
     mild_n = len(ret["mild"])
     moderate_n = len(ret["moderate"])
+    severe_n = len(ret["severe"])
     mild_comma = ', ' if no_n > 0 else ''
-    moderate_comma = ', ' if mild_n > 0 or no_n > 0 else ''
-    severe_comma = ', και ' if moderate_n > 0 or mild_n > 0 or no_n > 0 else ''
+    moderate_comma = (', ' + " και " if severe_n == 0 else "")  if mild_n > 0 else ''
+    severe_comma = ', και ' if moderate_n > 0 or mild_n > 0 else ''
 
     ret["finals"]["no"] = f"δεν αναφέρθηκαν δυσκολίες {cap_lits['no']} " + ret["finals"]["no"] if len(ret["no"]) > 0 else ""
     ret["finals"]["mild"] = f"{mild_comma}αναφέρθηκαν ήπιες δυσκολίες {cap_lits['mild']} " + ret["finals"]["mild"] if len(ret["mild"]) > 0 else ""

@@ -62,22 +62,29 @@ handle_s1_revisit(parsed, document, lits) #ok
 handle_s1_last(parsed, document, lits) #ok
 
 add_header(document, "Αποτελέσματα νευροψυχολογικής εκτίμησης")
-add_header(document, "Μνήμη", 2)
-handle_verbal_memory(parsed, document, lits) #ok
-handle_visual_memory(parsed, document, lits) #ok
-handle_memory_conclusions(parsed, document, lits)
+if parsed['ravlt'].administered or parsed['rocft'].administered:
+    add_header(document, "Μνήμη επεισοδίων", 2)
+    if parsed['ravlt'].administered:
+        handle_verbal_memory(parsed, document, lits) #ok
+    if parsed['rocft'].administered:
+        handle_visual_memory(parsed, document, lits) #ok
+    handle_memory_conclusions(parsed, document, lits)
 
-add_header(document, "Οπτικοχωρικές ικανότητες", 2)
-handle_visuospatial(parsed, document, lits)
+if parsed['rocft'].administered:
+    add_header(document, "Οπτικοχωρικές ικανότητες", 2)
+    handle_visuospatial(parsed, document, lits)
 
-add_header(document, "Εκτελεστικές λειτουργίες", 2)
-handle_executive_functions(parsed, document, lits) #needs input from Elena
+if parsed['fucas'].administered:
+    add_header(document, "Εκτελεστικές λειτουργίες", 2)
+    handle_executive_functions(parsed, document, lits)
 
-add_header(document, "Καθημερινή λειτουργικότητα", 2)
-handle_everyday_functionality(parsed, document, lits)
+if parsed['frssd'].administered or parsed['fucas'].administered:
+    add_header(document, "Καθημερινή λειτουργικότητα", 2)
+    handle_everyday_functionality(parsed, document, lits)
 
-add_header(document, "Νευροψυχιατρικά συμπτώματα", 2)
-handle_neuropsychological_symptoms(parsed, document, lits)
+if parsed['gds'].administered or parsed['npi'].administered:
+    add_header(document, "Νευροψυχιατρικά συμπτώματα", 2)
+    handle_neuropsychological_symptoms(parsed, document, lits)
 
 add_header(document, "Συμπεράσματα", 2)
 handle_conclusions(parsed, document, lits)

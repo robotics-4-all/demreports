@@ -5,12 +5,12 @@ end
 PatientInfo
     first_name: "Name"
     last_name: "Surname"
-    father_name: "George"
-    mother_name: "dsa"
+    father_name: "Στέργιου"
+    mother_name: "Ευαγγελίας"
     gender: "F"
-    age: 78
+    age: 82
     amka: 6987456756
-    education: 13
+    education: 6
     enesthesia: "ΝΑΙ"
     date_medical_history: "6/12/2012"
     date_npse: "5/12/2012"
@@ -32,42 +32,42 @@ PatientInfo
 end
 
 RAVLT
-    administered: true
-    learning_score: 0
-    maintaining_score: 15
+    administered: false
+    learning_score: 3
+    maintaining_score: 0
     wm_score: 8
 end
 
 ROCFT
     administered: true
-    copy_score: 0
-    delayed_recall_score: 18.5
+    copy_score: 26.5
+    delayed_recall_score: 5.5
 end
 
 MMSE
     administered: true
-    score: 19
+    score: 22
     visuospatial_score: 8
 end
 
 FUCAS
     administered: false
-    score: 44 // total_score
+    score: 56 // total_score
 
-    understanding: 2
+    understanding: 1
     prospective_memory: 2
-    planning: 1
-    time: 1
-    sequence: 1
+    planning: 2
+    time: 2
+    sequence: 2
     accuracy: 2
-    goal: 1
+    goal: 2
 
-    obj_medication: 9
-    obj_telephone: 9
+    obj_medication: 10
+    obj_telephone: 13
     obj_financial: 9
-    obj_hygiene: 9
-    obj_orientation: 9
-    obj_dressing: 10
+    obj_hygiene: 7
+    obj_orientation: 10
+    obj_dressing: 7
 end
 
 FRSSD
@@ -77,60 +77,60 @@ FRSSD
     nutrition: 0
     dressing: 0
     akrateia: 0
-    speech: 3
+    speech: 1
     sleep: 0
     face_recognition: 0
     hygiene: 0
     name_memory: 0
-    episodic_memory: 3
-    attention: 0
-    confusion: 0
+    episodic_memory: 1
+    attention: 2
+    confusion: 2
     orientation: 0
     emotional_state: 0
     social_responsiveness: 0
 end
 
 NPI
-    administered: true
-    score: 47
+    administered: false
+    score: 6
 
     delusions_freq: 0
-    delusions_severity: 1
+    delusions_severity: 0
     hallucinations_freq: 0
-    hallucinations_severity: 2
+    hallucinations_severity: 0
     agitation_freq: 0
-    agitation_severity: 3
-    depression_freq: 2
-    depression_severity: 1
+    agitation_severity: 0
+    depression_freq: 3
+    depression_severity: 2
     anxiety_freq: 0
-    anxiety_severity: 1
-    elation_freq: 4
-    elation_severity: 2
+    anxiety_severity: 0
+    elation_freq: 0
+    elation_severity: 0
     apathy_freq: 0
-    apathy_severity: 3
-    disinhibition_freq: 1
-    disinhibition_severity: 3
+    apathy_severity: 0
+    disinhibition_freq: 0
+    disinhibition_severity: 0
     irritability_freq: 0
-    irritability_severity: 1
+    irritability_severity: 0
     aberrant_motor_activity_freq: 0
-    aberrant_motor_activity_severity: 2
+    aberrant_motor_activity_severity: 0
     sleep_freq: 0
-    sleep_severity: 3
+    sleep_severity: 0
     appetite_freq: 0
-    appetite_severity: 3
+    appetite_severity: 0
 end
 
 GDS
-    administered: true
+    administered: false
     score: 2
 end
 
 SAST
-    administered: true
+    administered: false
     score: 0
 end
 
 BDI
-    administered: true
+    administered: false
     score: 0
 end

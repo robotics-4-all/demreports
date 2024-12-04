@@ -40,11 +40,11 @@ def handle_memory_conclusions(parsed, document, literals):
     problems_visual = "οπτικής"
 
     problems = ""
-    if verbal_bool and visual_bool:
+    if verbal_bool and visual_bool and parsed['ravlt'].administered and parsed['rocft'].administered:
         problems = f"{problems_verbal} και {problems_visual}"
-    elif verbal_bool and not visual_bool:
+    elif verbal_bool and not visual_bool and parsed['ravlt'].administered:
         problems = problems_verbal
-    elif visual_bool and not verbal_bool:
+    elif visual_bool and not verbal_bool and parsed['rocft'].administered:
         problems = problems_visual
     else:
         problems = f"{problems_verbal} και {problems_visual}"

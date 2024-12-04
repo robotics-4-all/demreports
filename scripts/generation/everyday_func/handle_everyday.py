@@ -37,7 +37,7 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
 
     fucas_admin = parsed['fucas'].administered
     frssd_admin = parsed['frssd'].administered
-    
+
     printable_1 = "Από τα αποτελέσματα της αντικειμενικής εκτίμησης μέσω της δοκιμασίας καθημερινής λειτουργικότητας (FUCAS)"
     # if len(fucas_lits['objective']['no']) > 0:
     #     printable_1 += f" δεν διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['no']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['no'])}"

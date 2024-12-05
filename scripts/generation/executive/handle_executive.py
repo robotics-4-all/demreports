@@ -41,12 +41,12 @@ def handle_executive_functions(parsed, document, literals):
     printable_1 = f"Όσον αφορά την αξιολόγηση των σύνθετων και των απλών καθημερινών δραστηριοτήτων, η οποία έγινε μέσω της δοκιμασίας FUCAS, {porisma}.\n"
     p1.add_run(printable_1)
 
-    p1.add_run(f"Τα παραπάνω ευρήματα καταδεικνύουν πως {literals['full_with_article']}")
+    p1.add_run(f"Τα παραπάνω ευρήματα καταδεικνύουν πως {literals['article_lastname_mr_mrs']}")
     p1.add_run(f"{'δεν' if len(fl['individual_affected']) == 0 else ''} παρουσίαζε δυσκολίες σε ικανότητες που είναι απαραίτητες προκειμένου να ολοκληρωθεί σωστά η εκτέλεση σύνθετων νοητικών έργων/δραστηριοτήτων.")
 
     if len(fl['individual_affected']) > 0:
-        p1.add_run(" Πιθανά παραδείγματα που να σχετίζονται με την καθημερινή ζωή αφορούν τη δυσκολία του εξεταζόμενου")
-        lst = create_literal_list([f" {fl['examples'][item]}" for item in fl['individual_affected']])
+        p1.add_run(f" Πιθανά παραδείγματα που να σχετίζονται με την καθημερινή ζωή αφορούν τη δυσκολία {literals['examinee_gender']} ")
+        lst = create_literal_list([f"{fl['examples'][item]}" for item in fl['individual_affected']], add_identifiers=True)
         p1.add_run(lst)
     p1.add_run(".")
 

@@ -11,7 +11,7 @@ PatientInfo
     age: 82
     amka: 6987456756
     education: 6
-    enesthesia: "ΝΑΙ"
+    enesthesia: "ΜΕΡΙΚΗ"
     date_medical_history: "6/12/2012"
     date_npse: "5/12/2012"
     unit: "saint helen"
@@ -32,7 +32,7 @@ PatientInfo
 end
 
 RAVLT
-    administered: false
+    administered: true
     learning_score: 3
     maintaining_score: 0
     wm_score: 8
@@ -40,8 +40,8 @@ end
 
 ROCFT
     administered: true
-    copy_score: 26.5
-    delayed_recall_score: 5.5
+    copy_score: 0
+    delayed_recall_score: 0
 end
 
 MMSE
@@ -51,7 +51,7 @@ MMSE
 end
 
 FUCAS
-    administered: false
+    administered: true
     score: 56 // total_score
 
     understanding: 1
@@ -91,7 +91,7 @@ FRSSD
 end
 
 NPI
-    administered: false
+    administered: true
     score: 6
 
     delusions_freq: 0
@@ -121,16 +121,16 @@ NPI
 end
 
 GDS
-    administered: false
+    administered: true
     score: 2
 end
 
 SAST
-    administered: false
+    administered: true
     score: 0
 end
 
 BDI
-    administered: false
+    administered: true
     score: 0
 end

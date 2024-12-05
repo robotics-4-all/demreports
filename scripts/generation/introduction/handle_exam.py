@@ -18,6 +18,9 @@ def handle_exam(parsed, document):
     p1 = document.add_paragraph()
     r1_p1 = p1.add_run('Θεσσαλονίκη ')
     r1_p1.bold = True
-    p1.add_run(f"{parsed['report'].date}\n")
+    # Get the date in the format DD/MM/YYYY
+    d = parsed['report'].date.split('/')
+    parsed['report'].date = f"{d[1]}/{d[0]}/{d[2]}"
+    p1.add_run(f"{str(parsed['report'].date)}\n")
     p1.alignment = 2 # right align the paragraph
     

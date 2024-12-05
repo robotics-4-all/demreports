@@ -42,7 +42,7 @@ def frssd_literals(results):
         "face_recognition": "της αναγνώρισης προσώπων",
         "hygiene": "της διατήρησης της προσωπικής υγιεινής",
         "name_memory": "της μνήμης ονομάτων",
-        "episodic_memory": "της μνήμης γεγονότων",
+        "episodic_memory": "μνήμης επεισοδίων",
         "attention": "της εγρήγορσης/προσοχής",
         "confusion": "της σφαιρικής σύγχυσης",
         "orientation": "του προσανατολισμού σε χώρο και χρόνο",
@@ -70,7 +70,7 @@ def frssd_literals(results):
 
     ret["finals"]["no"] = f"δεν αναφέρθηκαν δυσκολίες {cap_lits['no']} " + ret["finals"]["no"] if len(ret["no"]) > 0 else ""
     ret["finals"]["mild"] = f"{mild_comma}αναφέρθηκαν ήπιες δυσκολίες {cap_lits['mild']} " + ret["finals"]["mild"] if len(ret["mild"]) > 0 else ""
-    ret["finals"]["moderate"] = f"{moderate_comma}αναφέρθηκαν μέτριες δυσκολίες {cap_lits['moderate']} " + ret["finals"]["moderate"] if len(ret["moderate"]) > 0 else ""
+    ret["finals"]["moderate"] = f"{moderate_comma}αναφέρθηκαν μετρίου επιπέδου δυσκολίες {cap_lits['moderate']} " + ret["finals"]["moderate"] if len(ret["moderate"]) > 0 else ""
     ret["finals"]["severe"] = f"{severe_comma}αναφέρθηκαν σοβαρές δυσκολίες {cap_lits['severe']} " + ret["finals"]["severe"] if len(ret["severe"]) > 0 else ""
 
     return ret

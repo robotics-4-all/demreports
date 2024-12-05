@@ -18,7 +18,7 @@ def handle_signature(document):
     # input from Elena
     p1.add_run("\n\nΥπογραφή\n\n\n\n\n")
     p1.add_run("Πόπτση Ελένη\n")
-    p1.add_run("PhD Γνωστικής Ψυχολογίας ΑΠΘ\n")
+    p1.add_run("PhD Ψυχολογίας ΑΠΘ\n")
     p1.add_run("Ψυχολόγος ΑΠΘ\n")
     p1.add_run("MSc Κοινωνικής Ψυχιατρικής ΔΠΘ\n")
 

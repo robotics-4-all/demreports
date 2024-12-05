@@ -42,7 +42,7 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
     # if len(fucas_lits['objective']['no']) > 0:
     #     printable_1 += f" δεν διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['no']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['no'])}"
     if len(fucas_lits['objective']['yes']) > 0:
-        printable_1 += f"{', ενώ' if len(fucas_lits['objective']['no']) > 0 else ''} διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['yes']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['yes'])}"
+        printable_1 += f" διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['yes']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['yes'])}"
     printable_1 += ". "
 
     if fucas_admin:
@@ -64,7 +64,7 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
     if frssd_admin:
         p1.add_run(printable_2)
 
-    printable_3 = f" Τα παραπάνω ευρήματα (η ύπαρξη μέτριων ή σοβαρών ελλειμάτων) συνηγορούν στο ότι για το χρονικό διάστημα στο οποίο αναφέρεται η νευροψυχολογική εκτίμηση, {literals['full_with_article']} χρειαζόταν υπενθύμιση, βοήθεια και στήριξη μέσω τρίτων προσώπων προκειμένου να μπορεί να ανταπεξέλθει στις σύνθετες αλλά και στις πιο απλές δραστηριότητες της καθημερινής ζωής."
+    printable_3 = f" Τα παραπάνω ευρήματα συνηγορούν στο ότι για το χρονικό διάστημα στο οποίο αναφέρεται η νευροψυχολογική εκτίμηση, {literals['article_lastname_mr_mrs']} χρειαζόταν υπενθύμιση και βοήθεια μέσω τρίτων προσώπων προκειμένου να μπορεί να ανταπεξέλθει στις σύνθετες δραστηριότητες της καθημερινής ζωής."
     if frssd_admin and (frssd_lits['finals']['moderate'] != "" or frssd_lits['finals']['severe'] != ""):
         p1.add_run(printable_3)
 

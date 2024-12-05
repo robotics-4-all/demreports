@@ -30,6 +30,8 @@ def generate_literals(parsed):
     ret["full_name"] = f"{patient.surname} {patient.name}"
     ret["first_name"] = patient.name
     ret["last_name"] = patient.surname
+    ret["article_lastname_mr_mrs"] = ("η" if gender == "F" else "ο") + " κ. " + patient.surname
+    ret["article_lastname_mr_mrs_capital"] = ("Η" if gender == "F" else "Ο") + " κ. " + patient.surname
     ret['full_with_article'] = f"{ret['article_caps'].lower()} {ret['full_name']}"
     ret['full_with_article_capital'] = f"{ret['article_caps']} {ret['full_name']}"
     ret["parents_names"] = ""

@@ -34,6 +34,6 @@ def handle_patient_info(parsed, document):
 
     r1_p6 = p1.add_run('ΕΝΑΙΣΘΗΣΙΑ:\t\t')
     r1_p6.bold = True
-    p1.add_run('ΝΑΙ' if patient.enesthesia else 'ΟΧΙ\n')
+    p1.add_run(f"{patient.enesthesia}\n")
 
     p1.alignment = 0 # left align the paragraph

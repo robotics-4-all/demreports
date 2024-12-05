@@ -29,15 +29,15 @@ def handle_memory_conclusions(parsed, document, literals):
 
     rocft_recall_problem = ", αλλά και συγκράτησης καινούριων πληροφοριών προκειμένου να ανασύρει από την μακρόχρονη μνήμη αποτελεσματικά νέες πληροφορίες" if (rocft_lits["recall_problem"] or ravlt_lits["maintain_problem"]) else ""
     rocft_problem = f" Τα ελλείμματα σε επίπεδο οπτικής μνήμης επεισοδίων, μεταφράζονται σε δυσκολίες {literals['examinee_gender']} να θυμηθεί τον χώρο που έχει τοποθετήσει προσωπικά {literals['article_v3']} αντικείμενα, το σημείο στο οποίο βρίσκεται ένα συγκεκριμένο σούπερ μάρκετ κτλ." if rocft_lits["copy_problem"] or rocft_lits["recall_problem"] else ""
-    ravlt_problem = f" Σε επίπεδο καθημερινής ζωής τα παραπάνω ελλείμματα μεταφράζονται σε δυσκολία {literals['examinee_gender']} να θυμηθεί πληροφορίες που έχουν επεξεργαστεί λεκτικά, όπως να θυμηθεί συζητήσεις τις οποίες έχει κάνει, πληροφορίες τις οποίες άκουσε στην τηλεόραση, ποιος είναι ο κωδικός από το κινητό τηλέφωνο, ποιος είναι ο καινούριος τηλεφωνικός αριθμός της κόρης κτλ." if ravlt_lits["learning_problem"] or ravlt_lits["maintain_problem"] else ""
+    ravlt_problem = f" Σε επίπεδο καθημερινής ζωής τα παραπάνω ελλείμματα μεταφράζονται σε δυσκολία {literals['examinee_gender']} να θυμηθεί πληροφορίες που έχουν επεξεργαστεί λεκτικά, όπως να θυμηθεί συζητήσεις τις οποίες έχει κάνει, πληροφορίες τις οποίες άκουσε στην τηλεόραση, να μάθει ποιος είναι ο κωδικός από το καινούργιο κινητό τηλέφωνο, να μάθει τον καινούριο τηλεφωνικό αριθμό της κόρης κτλ." if ravlt_lits["learning_problem"] or ravlt_lits["maintain_problem"] else ""
 
     problem_in_general = " μη ύπαρξης" if not (rocft_lits["recall_problem"] or rocft_lits["copy_problem"] or ravlt_lits["learning_problem"] or ravlt_lits["maintain_problem"]) else " ύπαρξης"
 
     verbal_bool = ravlt_lits["learning_problem"] or ravlt_lits["maintain_problem"]
     visual_bool = rocft_lits["recall_problem"] or rocft_lits["copy_problem"]
 
-    problems_verbal = "λεκτικής"
-    problems_visual = "οπτικής"
+    problems_verbal = "λεκτικής μάθησης"
+    problems_visual = "οπτικής μνήμης επεισοδίων"
 
     problems = ""
     if verbal_bool and visual_bool and parsed['ravlt'].administered and parsed['rocft'].administered:
@@ -49,7 +49,7 @@ def handle_memory_conclusions(parsed, document, literals):
     else:
         problems = f"{problems_verbal} και {problems_visual}"
 
-    text = f"Οι παραπάνω επιδόσεις στην μνήμη επεισοδίων συνηγορούν υπέρ{problem_in_general} δυσκολιών από την πλευρά {literals['examinee_gender']} όσον αφορά στην ικανότητα {problems} μάθησης{rocft_recall_problem}.{ravlt_problem}{rocft_problem}"
+    text = f"Οι παραπάνω επιδόσεις στην μνήμη επεισοδίων συνηγορούν υπέρ{problem_in_general} δυσκολιών από την πλευρά {literals['examinee_gender']} όσον αφορά στην ικανότητα {problems}{rocft_recall_problem}.{ravlt_problem}{rocft_problem}"
     p1.add_run(text)
 
     p1.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY

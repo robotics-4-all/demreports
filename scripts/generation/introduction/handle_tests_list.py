@@ -25,7 +25,8 @@ def handle_tests_list(parsed, document):
 
     p2 = document.add_paragraph()
     if 'mmse' in parsed and parsed['mmse'].administered:
-        p2.add_run('•  Σύντομη εξέταση της νοητικής κατάστασης MMSE\n').bold = True
+        mmse_lit = 'MMSE' if parsed['patient'].education > 4 else 'HMSE'
+        p2.add_run(f'•  Σύντομη εξέταση της νοητικής κατάστασης {mmse_lit}\n').bold = True
     if 'ravlt' in parsed and parsed['ravlt'].administered:
         p2.add_run('•  Δοκιμασία λεκτικής ακουστικής μάθησης RAVLT\n').bold = True
     if 'rocft' in parsed and parsed['rocft'].administered:

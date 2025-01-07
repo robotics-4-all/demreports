@@ -29,7 +29,7 @@ def handle_verbal_memory(parsed, document, literals, print_output = False):
     p1_r1 = p1.add_run("Λεκτική μνήμη επεισοδίων: ")
     p1_r1.italic = True
 
-    printable = f"Κατά τη νευροψυχολογική εκτίμηση στις {parsed['patient'].date_npse} και συγκεκριμένα μέσω της χορήγησης της δοκιμασίας RAVLT, {literals['article_lastname_mr_mrs']} {ravlt_lits['learning']} στην ικανότητα μάθησης καταλόγου λέξεων μετά από επανάληψη. Το παραπάνω γεγονός καταδείκνυε ότι για το διάστημα στο οποίο έγινε η εκτίμηση, {ravlt_lits['learning_explanation']}. Η ικανότητα ανάσυρσης της πληροφορίας από την μακρόχρονη μνήμη, όπως διαπιστώθηκε από την ίδια δοκιμασία, {ravlt_lits['maintain']}, καθώς {literals['article_lastname_mr_mrs']} {ravlt_lits['maintain_explanation']}. "
+    printable = f"Κατά τη νευροψυχολογική εκτίμηση στις {parsed['patient'].date_npse} και συγκεκριμένα μέσω της χορήγησης της δοκιμασίας RAVLT, {literals['article_lastname_mr_mrs']} {ravlt_lits['learning']} στην ικανότητα μάθησης καταλόγου λέξεων μετά από επανάληψη. Το παραπάνω γεγονός καταδείκνυε ότι για το διάστημα στο οποίο έγινε η εκτίμηση, {ravlt_lits['learning_explanation']}. Η ικανότητα ανάσυρσης της πληροφορίας από την μακρόχρονη μνήμη, όπως διαπιστώθηκε από την ίδια δοκιμασία, {ravlt_lits['maintain']}, καθώς {literals['article_lastname_mr_mrs']} {ravlt_lits['maintain_explanation']}{ravlt_lits['apospasmatika']}. "
 
     p1.add_run(printable)
 

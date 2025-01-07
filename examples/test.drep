@@ -9,21 +9,21 @@ PatientInfo
     mother_name: "Ευαγγελίας"
     gender: "F"
     age: 82
-    amka: 6987456756
-    education: 6
+    amka: "0987456756"
+    education: 4
     enesthesia: "ΜΕΡΙΚΗ"
     date_medical_history: "6/12/2012"
     date_npse: "5/12/2012"
     unit: "saint helen"
     training_suggestion: true
 
-    attendant_1_existed: false
-    attendant_1_name: "Attendant1"
+    attendant_1_existed: true
+    attendant_1_name: "Manos"
     attendant_1_relationship: "child"
     attendant_1_gender: "M"
     
-    attendant_2_existed: false
-    attendant_2_name: "Attendant2"
+    attendant_2_existed: true
+    attendant_2_name: "Maria"
     attendant_2_relationship: "husband"
     attendant_2_gender: "F"
     
@@ -40,14 +40,14 @@ end
 
 ROCFT
     administered: true
-    copy_score: 0
+    copy_score: 3
     delayed_recall_score: 0
 end
 
 MMSE
     administered: true
     score: 22
-    visuospatial_score: 8
+    visuospatial_score: 0
 end
 
 FUCAS
@@ -62,7 +62,7 @@ FUCAS
     accuracy: 2
     goal: 2
 
-    obj_medication: 10
+    obj_medication: 2
     obj_telephone: 13
     obj_financial: 9
     obj_hygiene: 7
@@ -127,10 +127,15 @@ end
 
 SAST
     administered: true
-    score: 0
+    score: 50
 end
 
 BDI
     administered: true
     score: 0
+end
+
+BAI
+    administered: true
+    score: 17
 end

@@ -21,9 +21,51 @@ def handle_neuropsychological_symptoms(parsed, document, literals):
     """
     p1 = document.add_paragraph()
 
-    gds_lits = gds_literals(parsed['gds'])
+    anxiety = False
+    anxiety_status = ""
+    questionnaires = []
+    if parsed['sast'].administered:
+        questionnaires.append("SAST")
+    if parsed['sast'].administered and parsed['sast'].score >= 22:
+        anxiety = True
+        anxiety_status = "διαπιστώθηκε αγχώδης διαταραχή"
 
-    p1.add_run(f"Σύμφωνα με τα ερωτηματολόγιο αυτοαναφοράς (GDS) που χορηγήθηκε {literals['examinee_gender_v2']}, για την περίοδο που έγινε η εκτίμηση, {gds_lits}.")
+    if parsed['bai'].administered:
+        questionnaires.append("BAI")
+    if parsed['bai'].administered and parsed['bai'].score >= 8:
+        anxiety = True
+        anxiety_severity = "ήπια"
+        if parsed['bai'].score >= 16:
+            anxiety_severity = "μέτρια"
+        if parsed['bai'].score >= 26:
+            anxiety_severity = "σοβαρή"
+        anxiety_status = f"διαπιστώθηκε {anxiety_severity} αγχώδης διαταραχή"
+
+    depression = False
+    depression_status = ""
+    if parsed['bdi'].administered:
+        questionnaires.append("BDI")
+    if parsed['bdi'].administered and parsed['bdi'].score >= 9:
+        depression = True
+        depression_severity = "ήπια"
+        if parsed['bdi'].score >= 17:
+            depression_severity = "μέτρια"
+        if parsed['bdi'].score >= 27:
+            depression_severity = "σοβαρή"
+        depression_status = f"διαπιστώθηκε {depression_severity} κατάθλιψη"
+
+    if parsed['gds'].administered:
+        questionnaires.append("GDS")
+    if parsed['gds'].administered and parsed['gds'].score >= 6:
+        depression = True
+        depression_status = gds_literals(parsed['gds'])
+
+    total_anxiety = "δεν διαπιστώθηκε αγχώδης διαταραχή" if not anxiety else anxiety_status
+    total_depression = "δεν διαπιστώθηκε κατάθλιψη" if not depression else depression_status
+
+    quests = ", ".join(questionnaires)
+
+    p1.add_run(f"Σύμφωνα με τα ερωτηματολόγια αυτοαναφοράς ({quests}) που χορηγήθηκαν {literals['examinee_gender_v2']}, για την περίοδο που έγινε η εκτίμηση, {total_anxiety} και {total_depression}.")
 
     npi_lits = npi_literals(parsed['npi'])
 

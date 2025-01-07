@@ -141,4 +141,13 @@ BDI:
     'end'
 ;
 
+BAI: 
+    'BAI'
+    (
+        ('administered:' administered=BOOL)
+        ('score:' score=INT)
+    )#
+    'end'
+;
+
 // Hindi

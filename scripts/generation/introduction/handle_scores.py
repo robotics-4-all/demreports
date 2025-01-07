@@ -17,7 +17,8 @@ def handle_scores(parsed, document):
     totaltxt = ''
 
     if 'mmse' in parsed and parsed['mmse'].administered:
-        totaltxt += f"MMSE: {str(parsed['mmse'].score)}/30\n"
+        mmse_lit = 'MMSE' if parsed['patient'].education > 4 else 'HMSE'
+        totaltxt += f"{mmse_lit}: {str(parsed['mmse'].score)}/30\n"
     if 'ravlt' in parsed and parsed['ravlt'].administered:
         totaltxt += f"RAVLT Ικανότητα μάθησης / Ικανότητα συγκράτησης: {str(parsed['ravlt'].l_score)}/{str(parsed['ravlt'].m_score)}/15\n"
     if 'rocft' in parsed and parsed['rocft'].administered:

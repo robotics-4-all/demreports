@@ -130,6 +130,11 @@ def rocft_literals(results, age, education):
     ]
     mild_c = any(mild_flags_c_score)
 
-    ret["copy_problem"] = severe_c or mild_c
+    ret["copy_problem"] = "παρουσίασε" if severe_c or mild_c else "δεν παρουσίασε"
+    if severe_c:
+        ret["copy_problem"] += " σημαντικές"
+    ret["copy_flag"] = severe_c or mild_c
+
+    ret['apospasmatika'] = " (έστω και αποσπασματικά)" if results.c_score <= 6 else ""
 
     return ret

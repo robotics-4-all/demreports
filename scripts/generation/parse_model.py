@@ -43,7 +43,8 @@ def parse_model(model):
         "NPI": "npi",
         "GDS": "gds",
         "SAST": "sast",
-        "BDI": "bdi"
+        "BDI": "bdi",
+        "BAI": "bai",
     }
     for test, key in tests_dic.items():
         test = get_children_of_type(test, model)

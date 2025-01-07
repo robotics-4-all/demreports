@@ -27,6 +27,8 @@ def ravlt_literals(ravlt_results, age):
     severe = (age < 70 and ls <= 8.5) or (age < 80 and ls <= 6.5) or ls <= 5.5
     mild = (age < 70 and ls <= 11.5) or (age < 80 and ls <= 8.5) or ls <= 7.5
 
+    ret['apospasmatika'] = " (έστω και αποσπασματικά)" if ravlt_results.l_score <= 3 else ""
+
     if severe :
         ret["learning"] = f"παρουσίασε {'σοβαρά' if ls == 0 else 'σημαντικά'} ελλείμματα"
         ret["learning_explanation"] = "υπήρχε δυσκολία όσον αφορά την κωδικοποίηση νέων πληροφοριών, και δυσκολία στην χρήση αποτελεσματικών στρατηγικών μάθησης, προκειμένου να γίνει η αποθήκευση στην μακρόχρονη μνήμη"

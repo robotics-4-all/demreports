@@ -35,12 +35,24 @@ def handle_s1_first_visit(parsed, document, literals):
 
     p1 = document.add_paragraph()
 
+    atts_info = "" if literals["att_names"] == "" else f" και {literals['att_literal_1']} {literals['article_v3']}"
     training_suggestion = ""
     if parsed['patient'].training_suggestion is True:
-        training_suggestion = f"Μετά την ολοκλήρωση της νευροψυχολογικής εκτίμησης και κατά τη διάρκεια της ανακοίνωσης των αποτελεσμάτων {literals['article_v2']} κ. {literals['last_name']}, συστάθηκε, συμμετοχή {literals['examinee_gender']} σε προγράμματα νοητικής ενδυνάμωσης"
+        training_suggestion = f"Μετά την ολοκλήρωση της νευροψυχολογικής εκτίμησης και κατά τη διάρκεια της ανακοίνωσης των αποτελεσμάτων {literals['article_v2']} κ. {literals['last_name']}{atts_info}, συστάθηκε, συμμετοχή {literals['examinee_gender']} σε προγράμματα νοητικής ενδυνάμωσης"
+
+    everyday_complete = ""
+    if parsed['fucas'].administered:
+        everyday_complete = f"αντικειμενικά από {literals['the_same_v3']}"
+    if parsed['frssd'].administered:
+        and_str = " και " if everyday_complete != "" else ""
+        everyday_complete += f"{and_str}από {literals['att_names_with_relations']}"
+    if everyday_complete != "":
+        everyday_complete = f' ({everyday_complete})'
+
+    npi_existent = f" (πληροφορίες από {literals['att_literal_1']})" if parsed['npi'].administered else ""
 
     medical_history_str = "όπου και ελήφθη ένα πλήρες ιατρικό και κοινωνικό ιστορικό."
-    npse_str = f"προκειμένου να διενεργηθεί νευροψυχολογική εκτίμηση με τη χρήση συστοιχίας για την αξιολόγηση α) των νοητικών ικανοτήτων, β) της καθημερινής λειτουργικότητας, γ) της συναισθηματικής κατάστασης {literals['examinee_gender']}, καθώς επίσης και δ) τις αλλαγές στη συμπεριφορά. {training_suggestion}"
+    npse_str = f"προκειμένου να διενεργηθεί νευροψυχολογική εκτίμηση με τη χρήση συστοιχίας για την αξιολόγηση α) των νοητικών ικανοτήτων, β) της καθημερινής λειτουργικότητας{everyday_complete}, γ) της συναισθηματικής κατάστασης {literals['examinee_gender']}, καθώς επίσης και δ) τις αλλαγές στη συμπεριφορά{npi_existent}. {training_suggestion}"
 
     date_med = parsed['patient'].date_med
     date_npse = parsed['patient'].date_npse

@@ -17,5 +17,6 @@ Model:
         (gds=GDS)?
         (sast=SAST)?
         (bdi=BDI)?
+        (bai=BAI)?
     )#
 ;

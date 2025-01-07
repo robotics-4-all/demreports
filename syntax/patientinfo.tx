@@ -6,7 +6,7 @@ PatientInfo:
         ('father_name:' father_name=STRING)?
         ('mother_name:' mother_name=STRING)?
         ('gender:' gender=STRING)
-        ('amka:' amka=INT)?
+        ('amka:' amka=STRING)?
         ('age:' age=INT)
         ('education:' education=INT)
         ('enesthesia:' enesthesia=STRING)

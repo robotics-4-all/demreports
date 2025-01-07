@@ -31,7 +31,7 @@ def handle_visual_memory(parsed, document, literals, print_output = False):
     p1_r1 = p1.add_run("Οπτική μνήμη επεισοδίων: ")
     p1_r1.italic = True
 
-    printable = f"Η οπτική μνήμη επεισοδίων {rocft_lits['recall']}, έτσι όπως διαπιστώθηκε από την ανάκληση της σύνθετης φιγούρας ROCFT, αναλόγως της ηλικίας και της εκπαίδευσης {literals['examinee_gender']}. {literals['article_lastname_mr_mrs_capital']} {rocft_lits['recall_explanation']} της φιγούρας, την οποία είχε προηγουμένως κληθεί να αντιγράψει."
+    printable = f"Η οπτική μνήμη επεισοδίων {rocft_lits['recall']}, έτσι όπως διαπιστώθηκε από την ανάκληση της σύνθετης φιγούρας ROCFT, αναλόγως της ηλικίας και της εκπαίδευσης {literals['examinee_gender']}. {literals['article_lastname_mr_mrs_capital']} {rocft_lits['recall_explanation']} της φιγούρας, την οποία είχε προηγουμένως κληθεί να αντιγράψει{rocft_lits['apospasmatika']}."
 
     p1.add_run(printable)
 

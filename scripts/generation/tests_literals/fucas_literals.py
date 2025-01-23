@@ -55,7 +55,7 @@ def fucas_literals(results):
     ret['objective']['no' if results.obj_telephone < 9 else 'yes'].append("επικοινωνίας με την χρήση τηλεφώνου")
     ret['objective']['no' if results.obj_financial < 9 else 'yes'].append("οικονομικών συναλλαγών")
     ret['objective']['no' if results.obj_hygiene < 9 else 'yes'].append("διατήρησης της προσωπικής υγιεινής")
-    ret['objective']['no' if results.obj_orientation < 9 else 'yes'].append("προσανατολισμού σε χώρο")
+    ret['objective']['no' if results.obj_orientation < 9 else 'yes'].append("προσανατολισμού/μετακίνησης σε χώρο")
     ret['objective']['no' if results.obj_dressing < 9 else 'yes'].append("ένδυσης")
 
     ret['examples'] = {

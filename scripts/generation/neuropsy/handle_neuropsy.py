@@ -26,7 +26,7 @@ def handle_neuropsychological_symptoms(parsed, document, literals):
     questionnaires = []
     if parsed['sast'].administered:
         questionnaires.append("SAST")
-    if parsed['sast'].administered and parsed['sast'].score >= 22:
+    if parsed['sast'].administered and parsed['sast'].score >= 24:
         anxiety = True
         anxiety_status = "διαπιστώθηκε αγχώδης διαταραχή"
 

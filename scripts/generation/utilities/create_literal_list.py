@@ -15,7 +15,7 @@ def create_literal_list(items, add_identifiers=False):
     if len(items) == 1:
         return items[0]
     
-    identifiers = ["α", "β", "γ", "δ", "ε", "στ", "ζ", "η", "θ", "ι", "κ"]
+    identifiers = ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ"]
     final = ""
     for i, item in enumerate(items):
         if i == len(items) - 1:

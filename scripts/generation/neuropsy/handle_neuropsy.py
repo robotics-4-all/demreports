@@ -69,14 +69,15 @@ def handle_neuropsychological_symptoms(parsed, document, literals):
 
     npi_lits = npi_literals(parsed['npi'])
 
-    atts_related = f"{literals['att_literal_1']} ({literals['att_names_with_relations']})" if literals['att_names_with_relations'] != "" else literals['the_same_v3']
+    atts_related = f"{literals['att_literal_1']} " if literals['att_names_with_relations'] != "" else literals['the_same_v3']
 
     p1.add_run(f" Σύμφωνα με {atts_related}")
     if len(npi_lits[3]) > 0:
-        p1.add_run(" αναφέρθηκαν συμπεριφορές")
+        p1.add_run(" αναφέρθηκαν")
         p1.add_run(" μεγάλης σοβαρότητας").bold = True
+        p1.add_run(" διαταραχές συμπεριφοράς")
         p1.add_run(" όπως ")
-        p1.add_run(create_literal_list(npi_lits[3]))
+        p1.add_run(create_literal_list(npi_lits[3], add_identifiers=True))
         p1.add_run(". ")
     if len(npi_lits[2]) > 0:
         is_first = len(npi_lits[3]) == 0
@@ -87,20 +88,22 @@ def handle_neuropsychological_symptoms(parsed, document, literals):
         if not is_last and not is_first:
             ll = 'Επίσης'
 
-        p1.add_run(f"{ll} αναφέρθηκαν συμπεριφορές")
+        p1.add_run(f"{ll} αναφέρθηκαν")
         p1.add_run(" μέτριας σοβαρότητας").bold = True
+        p1.add_run(" διαταραχές συμπεριφοράς")
         p1.add_run(" όπως ")
-        p1.add_run(create_literal_list(npi_lits[2]))
+        p1.add_run(create_literal_list(npi_lits[2], add_identifiers=True))
         p1.add_run(". ")
     if len(npi_lits[1]) > 0:
         is_only = len(npi_lits[3]) == 0 or len(npi_lits[2]) == 0
         ll = ""
         if not is_only:
             ll = 'Τέλος'
-        p1.add_run(f"{ll} αναφέρθηκαν συμπεριφορές")
+        p1.add_run(f"{ll} αναφέρθηκαν")
         p1.add_run(" ήπιας σοβαρότητας").bold = True
+        p1.add_run(" διαταραχές συμπεριφοράς")
         p1.add_run(" όπως ")
-        p1.add_run(create_literal_list(npi_lits[1]))
+        p1.add_run(create_literal_list(npi_lits[1], add_identifiers=True))
         p1.add_run(". ")
 
     if len(npi_lits[1]) == 0 and len(npi_lits[2]) == 0 and len(npi_lits[3]) == 0:

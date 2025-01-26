@@ -10,7 +10,7 @@ PatientInfo
     gender: "F"
     age: 82
     amka: "0987456756"
-    education: 4
+    education: 12
     enesthesia: "ΜΕΡΙΚΗ"
     date_medical_history: "6/12/2012"
     date_npse: "5/12/2012"
@@ -54,17 +54,17 @@ FUCAS
     administered: true
     score: 56 // total_score
 
-    understanding: 1
-    prospective_memory: 2
-    planning: 2
-    time: 2
-    sequence: 2
-    accuracy: 2
-    goal: 2
+    understanding: 6
+    prospective_memory: 6
+    planning: 7
+    time: 6
+    sequence: 6
+    accuracy: 7
+    goal: 6
 
-    obj_medication: 2
+    obj_medication: 7
     obj_telephone: 13
-    obj_financial: 9
+    obj_financial: 8
     obj_hygiene: 7
     obj_orientation: 10
     obj_dressing: 7
@@ -100,8 +100,8 @@ NPI
     hallucinations_severity: 0
     agitation_freq: 0
     agitation_severity: 0
-    depression_freq: 3
-    depression_severity: 2
+    depression_freq: 0
+    depression_severity: 0
     anxiety_freq: 0
     anxiety_severity: 0
     elation_freq: 0

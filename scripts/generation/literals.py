@@ -52,7 +52,7 @@ def generate_literals(parsed):
     if num_atts == 1:
         # We assume that if 1 attenant exists, it is the first one
         ret["att_literal_1"] = "συνοδό"
-        ret["att_literal_1"] = ("την " if patient.att_1_gender == "F" else "τον " + ret["att_literal_1"]) + ret["att_literal_1"]
+        ret["att_literal_1"] = ("τη " if patient.att_1_gender == "F" else "τον " + ret["att_literal_1"]) + ret["att_literal_1"]
         ret["att_names"] = f"κ. {patient.att_1_name}"
         ret["att_names_with_relations"] = relations[patient.att_1_rel][patient.att_1_gender] + " " + ret["att_names"]
     elif num_atts == 2:

@@ -41,7 +41,7 @@ def fucas_literals(results):
     }
 
     for key, value in lits.items():
-        category = 'individual_affected' if getattr(results, key) > 1 else 'individual_unaffected'
+        category = 'individual_affected' if getattr(results, key) > 6 else 'individual_unaffected'
         ret[category].append(value)
 
     ret['affected'] = create_literal_list(ret['individual_affected'])

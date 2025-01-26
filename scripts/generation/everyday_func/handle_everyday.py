@@ -39,10 +39,11 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
     frssd_admin = parsed['frssd'].administered
 
     printable_1 = "Από τα αποτελέσματα της αντικειμενικής εκτίμησης μέσω της δοκιμασίας καθημερινής λειτουργικότητας (FUCAS)"
-    # if len(fucas_lits['objective']['no']) > 0:
-    #     printable_1 += f" δεν διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['no']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['no'])}"
+    if len(fucas_lits['objective']['no']) > 0:
+        printable_1 += f" δεν διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['no']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['no'])}"
     if len(fucas_lits['objective']['yes']) > 0:
-        printable_1 += f" διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['yes']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['yes'])}"
+        intermed = ", ενώ" if len(fucas_lits['objective']['no']) > 0 else ""
+        printable_1 += f"{intermed} διαπιστώθηκαν ελλείματα {'στην ικανότητα' if len(fucas_lits['objective']['yes']) == 1 else 'στις ικανότητες'} {create_literal_list(fucas_lits['objective']['yes'])}"
     printable_1 += ". "
 
     if fucas_admin:
@@ -57,7 +58,7 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
     #== check presentation
 
     atts_exist = parsed["patient"].att_1_existed or parsed["patient"].att_2_existed
-    atts_str = f"με {literals['att_literal_1']} ({literals['att_names_with_relations']})" if atts_exist else literals["examinee_gender_v2"]
+    atts_str = f"με {literals['att_literal_1']} "
 
     printable_2 = f"Σύμφωνα με την συνέντευξη που πραγματοποιήθηκε {atts_str} και μετά από την χορήγηση ημι-δομημένου ερωτηματολογίου (FRSSD){frssd_lits['finals']['mild']}{frssd_lits['finals']['moderate']}{frssd_lits['finals']['severe']}."
 

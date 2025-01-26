@@ -38,7 +38,7 @@ def handle_executive_functions(parsed, document, literals):
             post = f". Σε αντίθεση, {post}"
         porisma += post
 
-    printable_1 = f"Όσον αφορά την αξιολόγηση των σύνθετων και των απλών καθημερινών δραστηριοτήτων, η οποία έγινε μέσω της δοκιμασίας FUCAS, {porisma}.\n"
+    printable_1 = f"Όσον αφορά την αξιολόγηση των σύνθετων και των απλών καθημερινών δραστηριοτήτων, η οποία έγινε μέσω της δοκιμασίας FUCAS, {porisma}. "
     p1.add_run(printable_1)
 
     p1.add_run(f"Τα παραπάνω ευρήματα καταδεικνύουν πως {literals['article_lastname_mr_mrs']}")

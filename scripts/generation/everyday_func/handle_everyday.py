@@ -58,9 +58,9 @@ def handle_everyday_functionality(parsed, document, literals, print_output = Fal
     #== check presentation
 
     atts_exist = parsed["patient"].att_1_existed or parsed["patient"].att_2_existed
-    atts_str = f"με {literals['att_literal_1']} "
+    atts_str = f"με {literals['att_literal_1']}"
 
-    printable_2 = f"Σύμφωνα με την συνέντευξη που πραγματοποιήθηκε {atts_str} και μετά από την χορήγηση ημι-δομημένου ερωτηματολογίου (FRSSD){frssd_lits['finals']['mild']}{frssd_lits['finals']['moderate']}{frssd_lits['finals']['severe']}."
+    printable_2 = f"Σύμφωνα με τη συνέντευξη που πραγματοποιήθηκε {atts_str} και μετά από την χορήγηση ημι-δομημένου ερωτηματολογίου (FRSSD){frssd_lits['finals']['mild']}{frssd_lits['finals']['moderate']}{frssd_lits['finals']['severe']}."
 
     if frssd_admin:
         p1.add_run(printable_2)

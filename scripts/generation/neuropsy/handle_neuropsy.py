@@ -69,7 +69,7 @@ def handle_neuropsychological_symptoms(parsed, document, literals):
 
     npi_lits = npi_literals(parsed['npi'])
 
-    atts_related = f"{literals['att_literal_1']} " if literals['att_names_with_relations'] != "" else literals['the_same_v3']
+    atts_related = f"{literals['att_literal_1']}" if literals['att_names_with_relations'] != "" else literals['the_same_v3']
 
     p1.add_run(f" Σύμφωνα με {atts_related}")
     if len(npi_lits[3]) > 0:

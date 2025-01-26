@@ -100,8 +100,8 @@ NPI
     hallucinations_severity: 0
     agitation_freq: 0
     agitation_severity: 0
-    depression_freq: 0
-    depression_severity: 0
+    depression_freq: 2
+    depression_severity: 1
     anxiety_freq: 0
     anxiety_severity: 0
     elation_freq: 0

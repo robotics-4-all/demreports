@@ -83,10 +83,7 @@ def handle_scores(parsed, document):
 
     if 'npi' in parsed and parsed['npi'].administered:
         p1.add_run("NPI: ")
-        if any([len(npi_lits[i]) > 0 for i in range(1, 4)]):
-            p1.add_run(f"{str(parsed['npi'].score)}").bold = True
-        else:
-            p1.add_run(f"{str(parsed['npi'].score)}")
+        p1.add_run(f"{str(parsed['npi'].score)}")
         p1.add_run("/120\n")
 
     if 'gds' in parsed and parsed['gds'].administered:

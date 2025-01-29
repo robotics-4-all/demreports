@@ -22,6 +22,6 @@ def handle_s1_last(parsed, document, literals):
 
     revisit = "" if not parsed['patient'].revisit else ", εκ νέου"
 
-    p1.add_run(f"Μετά την ολοκλήρωση της νευροψυχολογικής εκτίμησης και κατά τη διάρκεια της ανακοίνωσης των αποτελεσμάτων {literals['article_v2']} κ. {literals['last_name']}, συστάθηκε{revisit} συμμετοχή {literals['examinee_gender']} σε προγράμματα νοητικής ενδυνάμωσης, καθώς και επανέλεγχος σε ένα έτος.")
+    p1.add_run(f"\nΜετά την ολοκλήρωση της νευροψυχολογικής εκτίμησης και κατά τη διάρκεια της ανακοίνωσης των αποτελεσμάτων {literals['article_v2']} κ. {literals['last_name']}, συστάθηκε{revisit} συμμετοχή {literals['examinee_gender']} σε προγράμματα νοητικής ενδυνάμωσης, καθώς και επανέλεγχος σε ένα έτος.")
 
     p1.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY

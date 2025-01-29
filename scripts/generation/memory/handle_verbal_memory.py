@@ -26,7 +26,7 @@ def handle_verbal_memory(parsed, document, literals, print_output = False):
     ravlt_lits = ravlt_literals(parsed['ravlt'], parsed['patient'].age)
     p1 = document.add_paragraph()
 
-    p1_r1 = p1.add_run("Λεκτική μνήμη επεισοδίων: ")
+    p1_r1 = p1.add_run("\nΛεκτική μνήμη επεισοδίων: ")
     p1_r1.italic = True
 
     d = parsed['patient'].date_npse

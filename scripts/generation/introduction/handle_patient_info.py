@@ -24,7 +24,7 @@ def handle_patient_info(parsed, document):
     r1_p3.bold = True
     p1.add_run(f"{patient.amka}\n" if patient.amka != "" else "-\n")
 
-    r1_p4 = p1.add_run('ΗΛΙΚΙΑ:\t\t')
+    r1_p4 = p1.add_run('ΗΛΙΚΙΑ:\t\t\t')
     r1_p4.bold = True
     p1.add_run(f"{patient.age} ΕΤΩΝ\n")
 

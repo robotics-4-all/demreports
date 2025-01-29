@@ -49,7 +49,7 @@ def handle_memory_conclusions(parsed, document, literals):
     else:
         problems = f"{problems_verbal} και {problems_visual}"
 
-    text = f"Οι παραπάνω επιδόσεις στην μνήμη επεισοδίων συνηγορούν υπέρ{problem_in_general} δυσκολιών από την πλευρά {literals['examinee_gender']} όσον αφορά στην ικανότητα {problems}{rocft_recall_problem}.{ravlt_problem}{rocft_problem}"
+    text = f"\nΟι παραπάνω επιδόσεις στην μνήμη επεισοδίων συνηγορούν υπέρ{problem_in_general} δυσκολιών από την πλευρά {literals['examinee_gender']} όσον αφορά στην ικανότητα {problems}{rocft_recall_problem}.{ravlt_problem}{rocft_problem}"
     p1.add_run(text)
 
     p1.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY

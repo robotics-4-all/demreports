@@ -33,9 +33,12 @@ from generation.neuropsy.handle_neuropsy import handle_neuropsychological_sympto
 
 from generation.outro.conclusions import handle_conclusions
 from generation.outro.signature import handle_signature
+import os
 
 # Create a new document
-document = Document()
+current_dir = os.path.dirname(os.path.abspath(__file__))
+input_path = os.path.join(current_dir, 'input.docx')
+document = Document(input_path)
 
 # Load the metamodel and model
 my_metamodel = metamodel_from_file('../syntax/demreport.tx')
@@ -47,23 +50,23 @@ lits = generate_literals(parsed)
 # Call the functions to handle the parsed data
 handle_exam(parsed, document)
 
-add_header(document, "Στοιχεία ασθενή") # ok
+add_header(document, "Στοιχεία ασθενή\n") # ok
 handle_patient_info(parsed, document) # ok
 
-add_header(document, "Δοκιμασίες") # ok
+add_header(document, "Δοκιμασίες\n") # ok
 handle_tests_list(parsed, document) # ok
 
-add_header(document, "Αποτελέσματα") # ok
+add_header(document, "Αποτελέσματα\n") # ok
 handle_scores(parsed, document) # ok
 
-add_header(document, "Εισαγωγή") # ok
+add_header(document, "\nΕισαγωγή\n") # ok
 handle_s1_first_visit(parsed, document, lits) #οk
 handle_s1_revisit(parsed, document, lits) #ok
 handle_s1_last(parsed, document, lits) #ok
 
-add_header(document, "Αποτελέσματα νευροψυχολογικής εκτίμησης")
+add_header(document, "\nΑποτελέσματα νευροψυχολογικής εκτίμησης")
 if parsed['ravlt'].administered or parsed['rocft'].administered:
-    add_header(document, "Μνήμη επεισοδίων", 2)
+    add_header(document, "\nΜνήμη επεισοδίων", 2)
     if parsed['ravlt'].administered:
         handle_verbal_memory(parsed, document, lits) #ok
     if parsed['rocft'].administered:
@@ -71,22 +74,22 @@ if parsed['ravlt'].administered or parsed['rocft'].administered:
     handle_memory_conclusions(parsed, document, lits)
 
 if parsed['rocft'].administered:
-    add_header(document, "Οπτικοχωρικές ικανότητες", 2)
+    add_header(document, "\nΟπτικοχωρικές ικανότητες\n", 2)
     handle_visuospatial(parsed, document, lits)
 
 if parsed['fucas'].administered:
-    add_header(document, "Εκτελεστικές λειτουργίες", 2)
+    add_header(document, "\nΕκτελεστικές λειτουργίες\n", 2)
     handle_executive_functions(parsed, document, lits)
 
 if parsed['frssd'].administered or parsed['fucas'].administered:
-    add_header(document, "Καθημερινή λειτουργικότητα", 2)
+    add_header(document, "\nΚαθημερινή λειτουργικότητα\n", 2)
     handle_everyday_functionality(parsed, document, lits)
 
 if parsed['gds'].administered or parsed['npi'].administered:
-    add_header(document, "Νευροψυχιατρικά συμπτώματα", 2)
+    add_header(document, "\nΝευροψυχιατρικά συμπτώματα\n", 2)
     handle_neuropsychological_symptoms(parsed, document, lits)
 
-add_header(document, "Συμπεράσματα", 2)
+add_header(document, "\nΣυμπεράσματα\n", 2)
 handle_conclusions(parsed, document, lits)
 
 handle_signature(document)

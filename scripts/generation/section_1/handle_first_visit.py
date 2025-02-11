@@ -52,15 +52,19 @@ def handle_s1_first_visit(parsed, document, literals):
     npi_existent = f" (πληροφορίες από {literals['att_literal_1']})" if parsed['npi'].administered else ""
 
     medical_history_str = "όπου και ελήφθη ένα πλήρες ιατρικό και κοινωνικό ιστορικό"
-    npse_str = f"προκειμένου να διενεργηθεί νευροψυχολογική εκτίμηση με τη χρήση συστοιχίας για την αξιολόγηση α) των νοητικών ικανοτήτων, β) της καθημερινής λειτουργικότητας{everyday_complete}, γ) της συναισθηματικής κατάστασης {literals['examinee_gender']}, καθώς επίσης και δ) τις αλλαγές στη συμπεριφορά{npi_existent}.{training_suggestion}"
+    npse_diff_dates = "προκειμένου να διενεργηθεί"
+    npse_same_dates = "διενεργήθηκε"
+    npse_str = f" νευροψυχολογική εκτίμηση με τη χρήση συστοιχίας για την αξιολόγηση α) των νοητικών ικανοτήτων, β) της καθημερινής λειτουργικότητας{everyday_complete}, γ) της συναισθηματικής κατάστασης {literals['examinee_gender']}, καθώς επίσης και δ) των αλλαγών στη συμπεριφορά{npi_existent}.{training_suggestion}"
 
     date_med = parsed['patient'].date_med
     date_npse = parsed['patient'].date_npse
     # compare which date is earlier. The format is "dd/mm/yyyy"
     date_compare_result = compare_dates(date_med, date_npse)
     if date_compare_result == 0:
-        p1.add_run(f"{literals['article_caps']} κ. {literals['full_name']},{literals['parents_names']}{literals['amka']} επισκέφτηκε για πρώτη φορά {literals['unit']}, στις {date_med}, {medical_history_str}. Στις {date_npse}, επισκέφτηκε την ίδια Μονάδα {npse_str}")
+        p1.add_run(f"{literals['article_caps']} κ. {literals['full_name']},{literals['parents_names']}{literals['amka']} επισκέφτηκε για πρώτη φορά {literals['unit']}, στις {date_med}, {medical_history_str}. Στις {date_npse}, επισκέφτηκε την ίδια Μονάδα {npse_diff_dates}{npse_str}")
     elif date_compare_result == 2:
-        p1.add_run(f"{literals['article_caps']} κ. {literals['full_name']},{literals['parents_names']}{literals['amka']} επισκέφτηκε για πρώτη φορά {literals['unit']}, στις {date_npse}, {npse_str} Στις {date_med}, επισκέφτηκε την ίδια Μονάδα {medical_history_str}.")
+        p1.add_run(f"{literals['article_caps']} κ. {literals['full_name']},{literals['parents_names']}{literals['amka']} επισκέφτηκε για πρώτη φορά {literals['unit']}, στις {date_npse}, {npse_diff_dates}{npse_str} Στις {date_med}, επισκέφτηκε την ίδια Μονάδα {medical_history_str}.")
+    elif date_compare_result == 1:
+        p1.add_run(f"{literals['article_caps']} κ. {literals['full_name']},{literals['parents_names']}{literals['amka']} επισκέφτηκε για πρώτη φορά {literals['unit']}, στις {date_med}, {medical_history_str}. Την ίδια μέρα {npse_same_dates}{npse_str}")
 
     p1.alignment = WD_PARAGRAPH_ALIGNMENT.JUSTIFY

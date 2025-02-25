@@ -75,7 +75,7 @@ def handle_scores(parsed, document):
 
     if 'frssd' in parsed and parsed['frssd'].administered:
         p1.add_run("FRSSD: ")
-        if parsed['fucas'].score > 5:
+        if parsed['frssd'].score > 5:
             p1.add_run(f"{str(parsed['frssd'].score)}").bold = True
         else:
             p1.add_run(f"{str(parsed['frssd'].score)}")

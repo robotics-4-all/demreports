@@ -1,47 +1,47 @@
 ReportInfo
-    date: "12/11/2024"
+    date: "10/02/2025"
 end
 
 PatientInfo
-    first_name: "Name"
-    last_name: "Surname"
-    father_name: "Στέργιου"
-    mother_name: "Ευαγγελίας"
-    gender: "F"
-    age: 82
-    amka: "0987456756"
-    education: 12
-    enesthesia: "ΜΕΡΙΚΗ"
-    date_medical_history: "6/12/2012"
-    date_npse: "5/12/2012"
+    first_name: "Ιωάννης"
+    last_name: "Μουρατίδης"
+    father_name: "Χρήστου"
+    mother_name: "Ζωγραφάς"
+    gender: "M"
+    age: 75
+    amka: "28094602118"
+    education: 10
+    enesthesia: "ΝΑΙ"
+    date_medical_history: "4/4/2019"
+    date_npse: "3/4/2019"
     unit: "saint helen"
     training_suggestion: true
 
     attendant_1_existed: true
-    attendant_1_name: "Manos"
-    attendant_1_relationship: "child"
-    attendant_1_gender: "M"
+    attendant_1_name: "Αθηνά"
+    attendant_1_relationship: "husband"
+    attendant_1_gender: "F"
     
-    attendant_2_existed: true
+    attendant_2_existed: false
     attendant_2_name: "Maria"
     attendant_2_relationship: "husband"
     attendant_2_gender: "F"
     
     revisit: true
-    revisit_date: "12/09/2016"
+    revisit_date: "19/05/2021"
 end
 
 RAVLT
     administered: true
-    learning_score: 3
-    maintaining_score: 0
-    wm_score: 8
+    learning_score: 12
+    maintaining_score: 6
+    wm_score: 5
 end
 
 ROCFT
     administered: true
-    copy_score: 3
-    delayed_recall_score: 0
+    copy_score: 32
+    delayed_recall_score: 18
 end
 
 MMSE
@@ -52,47 +52,47 @@ end
 
 FUCAS
     administered: true
-    score: 56 // total_score
+    score: 48 // total_score
 
     understanding: 6
-    prospective_memory: 6
-    planning: 7
+    prospective_memory: 8
+    planning: 6
     time: 6
     sequence: 6
-    accuracy: 7
-    goal: 6
+    accuracy: 6
+    goal: 8
 
-    obj_medication: 7
-    obj_telephone: 13
-    obj_financial: 8
+    obj_medication: 9
+    obj_telephone: 9
+    obj_financial: 7
     obj_hygiene: 7
-    obj_orientation: 10
+    obj_orientation: 9
     obj_dressing: 7
 end
 
 FRSSD
     administered: true
-    score: 16
+    score: 8
 
     nutrition: 0
     dressing: 0
     akrateia: 0
     speech: 1
-    sleep: 0
-    face_recognition: 0
+    sleep: 1
+    face_recognition: 1
     hygiene: 0
     name_memory: 0
-    episodic_memory: 1
-    attention: 2
-    confusion: 2
-    orientation: 0
-    emotional_state: 0
+    episodic_memory: 2
+    attention: 1
+    confusion: 0
+    orientation: 1
+    emotional_state: 1
     social_responsiveness: 0
 end
 
 NPI
     administered: true
-    score: 6
+    score: 7
 
     delusions_freq: 0
     delusions_severity: 0
@@ -100,8 +100,8 @@ NPI
     hallucinations_severity: 0
     agitation_freq: 0
     agitation_severity: 0
-    depression_freq: 2
-    depression_severity: 1
+    depression_freq: 0
+    depression_severity: 0
     anxiety_freq: 0
     anxiety_severity: 0
     elation_freq: 0
@@ -110,14 +110,14 @@ NPI
     apathy_severity: 0
     disinhibition_freq: 0
     disinhibition_severity: 0
-    irritability_freq: 0
-    irritability_severity: 0
+    irritability_freq: 2
+    irritability_severity: 1
     aberrant_motor_activity_freq: 0
     aberrant_motor_activity_severity: 0
-    sleep_freq: 0
-    sleep_severity: 0
-    appetite_freq: 0
-    appetite_severity: 0
+    sleep_freq: 2
+    sleep_severity: 1
+    appetite_freq: 3
+    appetite_severity: 1
 end
 
 GDS
@@ -127,15 +127,15 @@ end
 
 SAST
     administered: true
-    score: 50
+    score: 18
 end
 
 BDI
-    administered: true
+    administered: false
     score: 0
 end
 
 BAI
-    administered: true
+    administered: false
     score: 17
 end

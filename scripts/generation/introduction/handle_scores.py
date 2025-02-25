@@ -110,7 +110,7 @@ def handle_scores(parsed, document):
             p1.add_run(f"{str(parsed['bdi'].score)}")
         p1.add_run("/69\n")
 
-    if 'bai' in parsed and parsed['bdi'].administered:
+    if 'bai' in parsed and parsed['bai'].administered:
         p1.add_run("BAI: ")
         if parsed['bai'].score > 7:
             p1.add_run(f"{str(parsed['bai'].score)}").bold = True
